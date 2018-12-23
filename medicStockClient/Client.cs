@@ -13,7 +13,7 @@ namespace medicStockClient
     class Client
     {
         string dataString = null;
-        public Client(string demande1, string demande2)
+        public Client()
         {
             string address = "localhost";
             Int32 port = 22;
@@ -29,22 +29,10 @@ namespace medicStockClient
                         using (StreamWriter writer = new StreamWriter(networkStream))
                         {
                             writer.AutoFlush = true;
-                            
                             while (true)
                             {
-                                if (dataString == null)
-                                {
-                                    writer.WriteLine(demande1);
-                                    dataString = reader.ReadLine().ToString();
-                                }
-                                else
-                                {
-                                    writer.WriteLine(demande2);
-                                    Console.WriteLine(dataString = dataString + reader.ReadLine());
-                                    
-                                }
-
-                                
+                                dataString = reader.ReadLine();
+                                break;
                             }
                         }
                     }
@@ -54,7 +42,11 @@ namespace medicStockClient
             {
                 Console.WriteLine(e.Message);
             }
-            
+        }
+
+        public string getDataString()
+        {
+            return dataString;
         }
     }
 }

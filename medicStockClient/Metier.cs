@@ -8,11 +8,13 @@ namespace medicStockClient
 {
     class Metier
     {
+        string dataString;
         Client client;
 
         public Metier()
         {
-            client = new Client("medic","user");
+            client = new Client();
+            dataString = client.getDataString();
         }
     }
 }
