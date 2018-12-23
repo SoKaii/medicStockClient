@@ -16,6 +16,7 @@ namespace medicStockClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Metier metier = new Metier();
             Application.Run(new Form1());
         }
     }
