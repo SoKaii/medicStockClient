@@ -44,6 +44,7 @@ namespace medicStockClient
             }
         }
 
+
         public string getDataString()
         {
             return dataString;
