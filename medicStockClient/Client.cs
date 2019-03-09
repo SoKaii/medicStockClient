@@ -30,7 +30,7 @@ namespace medicStockClient
                         {
                             writer.AutoFlush = true;
                             while (true)
-                            {
+                            { 
                                 dataString = reader.ReadLine();
                                 break;
                             }

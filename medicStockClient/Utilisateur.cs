@@ -11,7 +11,7 @@ namespace medicStockClient
         string login;
         string nom;
         string prenom;
-        string profession;
+        bool administrateur;
         string password;
 
         public Utilisateur()
@@ -19,16 +19,16 @@ namespace medicStockClient
             login = null;
             nom = null;
             prenom = null;
-            profession = null;
+            administrateur = false;
             password = null;
         }
 
-        public Utilisateur(string p_login, string p_nom, string p_prenom,string p_profession, string p_password)
+        public Utilisateur(string p_login, string p_nom, string p_prenom,bool p_administrateur, string p_password)
         {
             login = p_login;
             nom = p_nom;
             prenom = p_prenom;
-            profession = p_profession;
+            administrateur = p_administrateur;
             password = p_password;
         }
 
@@ -41,8 +41,8 @@ namespace medicStockClient
         public string getPrenom()
         { return prenom; }
 
-        public string getProfession()
-        { return profession; }
+        public bool getadministrateur()
+        { return administrateur; }
 
         public string getPassword()
         { return password; }
