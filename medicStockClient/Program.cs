@@ -14,9 +14,9 @@ namespace medicStockClient
         [STAThread]
         static void Main()
         {
+            Ihm ihm = new Ihm();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Metier metier = new Metier();
             Application.Run(new Form1());
         }
     }

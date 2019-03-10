@@ -13,12 +13,12 @@ namespace medicStockClient
     class Client
     {
         string dataString = null;
-        public Client()
+        NetworkStream networkStream = null;
+        TcpClient ClientTcp;
+
+        public Client(String p_address, Int32 p_port)
         {
-            string address = "localhost";
-            Int32 port = 22;
-            NetworkStream networkStream = null;
-            TcpClient ClientTcp = new TcpClient(address, port);
+           ClientTcp = new TcpClient(p_address, p_port);
 
             try
             {
@@ -44,7 +44,30 @@ namespace medicStockClient
             }
         }
 
+        public bool sendData(String strToSent)
+        {
 
+            try
+            {
+                using (networkStream = ClientTcp.GetStream())
+                {
+                    using (StreamReader reader = new StreamReader(networkStream))
+                    {
+                        using (StreamWriter writer = new StreamWriter(networkStream))
+                        {
+                            writer.Write(strToSent);
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
         public string getDataString()
         {
             return dataString;

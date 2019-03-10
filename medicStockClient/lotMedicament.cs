@@ -28,7 +28,7 @@ namespace medicStockClient
             elevation = 0;
             mailFournisseurPrioritaire = null;
             seuilMin = 0;
-            quantiteCommandeAuto = ;
+            quantiteCommandeAuto = 0;
             commandeAuto = false;
             numeroEan = 0;
         }

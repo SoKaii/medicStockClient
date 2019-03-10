@@ -21,9 +21,12 @@ namespace medicStockClient
         private List<long> listChoicedMedicament; // Liste de tous les médicaments choisis par l'utilisateur afin d'y effectuer une interaction
         private List<String> listUpdateCommands; // Liste de toutes les commandes SQL générées durant l'utilisation de l'application 
 
+        private String serverAddress = "localhost";
+        private Int32 serverPort = 32;
+
         public Metier()
         {
-           
+            TcpClient = new Client(serverAddress,serverPort);
         }
 
         public int Authentification(String p_login, String p_password) // 0 = Login ou Pwd incorrect ; 1 = Normal user ; 2 = Admin user ; 3 = Erreur de vérification
@@ -152,7 +155,24 @@ namespace medicStockClient
 
         public void createMedic(List<String> p_newMedic)
         {
-            listMedicament.Add(new Medicament(Int64.Parse(p_newMedic[0])))
+            listMedicament.Add(new Medicament(Int64.Parse(p_newMedic[0]), p_newMedic[1], p_newMedic[2], p_newMedic[3], p_newMedic[4], int.Parse(p_newMedic[5])));
+        }
+
+        public void createUser(List<String> p_newUser)
+        {
+            listUtilisateur.Add(new Utilisateur(p_newUser[0], p_newUser[1], p_newUser[2], bool.Parse(p_newUser[3]), p_newUser[4]));
+        }
+
+        public String createSimpleDataString(List<String> p_listToConvert)
+        {
+            String dataString = null;
+
+            foreach(String str in p_listToConvert)
+            {
+                dataString = dataString + str + ";";
+            }
+
+            return dataString;
         }
     }
 }
