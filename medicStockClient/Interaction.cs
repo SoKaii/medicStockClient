@@ -25,6 +25,17 @@ namespace medicStockClient
             numeroLot = 0;
         }
 
+        public Interaction(int p_type,String p_date,int p_nombreBoite, long p_numeroEan, String p_loginUser, int p_numeroLot)
+        {
+            type = p_type;
+            date = p_date;
+            nombreBoite = p_nombreBoite;
+            numeroEan = p_numeroEan;
+            loginUser = p_loginUser;
+            numeroLot = p_numeroLot;
+        }
+
+
         public int getType()
         { return type; }
 

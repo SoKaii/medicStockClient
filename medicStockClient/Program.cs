@@ -14,10 +14,10 @@ namespace medicStockClient
         [STAThread]
         static void Main()
         {
-            Ihm ihm = new Ihm();
+            Utilisateur user = new Utilisateur("ZHKM0085", "Martin", "Thomas", true, "azerty");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Authentification());
         }
     }
 }

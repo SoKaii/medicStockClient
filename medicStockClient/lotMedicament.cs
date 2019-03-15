@@ -33,6 +33,19 @@ namespace medicStockClient
             numeroEan = 0;
         }
 
+        public lotMedicament(String p_numeroLot, int p_nombreBoite, String p_dateConditionnement, String p_localisation, int p_elevation, String p_mailFournisseurPrioritaire, int p_seuilMin, int p_quantiteCommandeAuto, bool p_commandeAuto,long p_numeroEan)
+        {
+            numeroLot = p_numeroLot;
+            nombreBoite = p_nombreBoite;
+            dateConditionement = p_dateConditionnement;
+            localisation = p_localisation;
+            elevation = p_elevation;
+            mailFournisseurPrioritaire = p_mailFournisseurPrioritaire;
+            seuilMin = p_seuilMin;
+            quantiteCommandeAuto = p_quantiteCommandeAuto;
+            commandeAuto = p_commandeAuto;
+            numeroEan = p_numeroEan;
+        }
         public String getNumeroLot()
         { return numeroLot; }
 

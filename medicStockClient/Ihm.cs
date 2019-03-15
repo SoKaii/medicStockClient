@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace medicStockClient
 {
-    class Ihm
+    public class Ihm
     {
+        Metier metier;
         public Ihm()
         {
-            Metier metier = new Metier();
-           
+            metier = new Metier();
+        }
+
+        public int getAuthentification(String p_login, String p_password)
+        {
+            return metier.Authentification(p_login, p_password);
         }
     }
 }
