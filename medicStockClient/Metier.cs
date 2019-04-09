@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Cryptography;
 
 
 namespace medicStockClient
@@ -68,7 +69,7 @@ namespace medicStockClient
             listLotMedicAttributes = LotMedicAttributes.Split(',').ToList();
 
 
-            for (i = 0; i < listLotMedic.Count - 1; i++)
+            for (i = 0; i < listMedic.Count - 1; i++)
             {
                 MedicAttributes = MedicAttributes + listMedic[i];
             }
@@ -79,7 +80,6 @@ namespace medicStockClient
             {
                 listUtilisateur.Add(new Utilisateur(listUserAttributes[y], listUserAttributes[y + 1], listUserAttributes[y + 2], ToBoolean(listUserAttributes[y + 3]), listUserAttributes[y + 4]));
             }
-            Console.WriteLine(cleanList(listUserAttributes).Count / 5);
 
             for (int y = 0; y < cleanList(listInterAttributes).Count; y = y + 6)
             {
@@ -100,20 +100,19 @@ namespace medicStockClient
 
         public int Authentification(String p_login, String p_password) // 0 = Login ou Pwd incorrect ; 1 = Normal user ; 2 = Admin user ; 3 = Erreur de vérification
         {
+
             try
             {
                 foreach (Utilisateur usr in listUtilisateur) // Pour chaque utilisateur référencé dans la base de données
                 {
-                    if (p_login == usr.getLogin() && p_password == usr.getPassword()) // Si les informations d'authentification correspondent
+                    if (p_login.ToLower() == usr.getLogin().ToLower() && MD5(p_password) == usr.getPassword()) // Si les informations d'authentification correspondent
                     {
                         if (usr.getadministrateur() == true) // Si l'utilisateur est référencé en tant qu'adinistrateur 
                         {
-                            Console.WriteLine(usr.getLogin());
                             return 2; // Utilisateur administrateur
                         }
                         else if (usr.getadministrateur() == false)
                         {
-                            Console.WriteLine(usr.getLogin());
                             return 1; // Utilisateur normal
                         }
                     }
@@ -129,12 +128,18 @@ namespace medicStockClient
         public List<String> configureChoiceMedic()
         {
             List<String> listMedicName = new List<String>();
+            bool tamer = true;
 
             foreach (Medicament medic in listMedicament)
             {
-                listMedicName.Add(medic.getNom());
+                foreach (String str in listMedicName)
+                {
+                    if (medic.getNom() == str)
+                        tamer = false;
+                }
+                if (tamer == true)
+                    listMedicName.Add(medic.getNom());
             }
-
             return listMedicName;
         }
 
@@ -150,44 +155,18 @@ namespace medicStockClient
             return listMedicForme;
         }
 
-        public List<int> configureChoiceMedic(String p_choicedName, String p_choicedForme)
+        public List<String> configureChoiceMedic(String p_choicedName, String p_choicedForme)
         {
-            List<int> listMedicDosage = new List<int>();
+            List<String> listMedicDosage = new List<String>();
 
             foreach (Medicament medic in listMedicament)
             {
                 if (medic.getNom() == p_choicedName && medic.getFormeGalenique() == p_choicedForme)
-                    listMedicDosage.Add(medic.getDosage());
+                    listMedicDosage.Add(medic.getDosage().ToString());
             }
             return listMedicDosage;
         }
-
-
-        public void configureListChoicedMedic(String p_choicedName, String p_choicedForme, int p_choicedDosage)
-        {
-            foreach (Medicament medic in listMedicament)
-            {
-                if (medic.getNom() == p_choicedName && medic.getFormeGalenique() == p_choicedForme && medic.getDosage() == p_choicedDosage)
-                    listChoicedMedicament.Add(medic.getNumeroEan());
-            }
-        }
-
-        public List<Medicament> getFullMedic(List<long> p_listChoicedMedic)
-        {
-            List<Medicament> fullListChoicedMedic = new List<Medicament>();
-
-            foreach (long ean in p_listChoicedMedic)
-            {
-                foreach (Medicament medic in listMedicament)
-                {
-                    if (medic.getNumeroEan() == ean)
-                        fullListChoicedMedic.Add(medic);
-                }
-            }
-
-            return fullListChoicedMedic;
-        }
-
+      
         public void sendOrderMail(long p_numeroEan)
         {
             Medicament medicToOrder = new Medicament();
@@ -283,6 +262,74 @@ namespace medicStockClient
                 i++;
             }
             return p_list;
+        }
+
+        public Utilisateur getUser(String p_login)
+        {
+            Utilisateur userConnected = new Utilisateur();
+            foreach (Utilisateur usr in listUtilisateur)
+            {
+                if (usr.getLogin().ToLower() == p_login.ToLower())
+                {
+                    userConnected = usr;
+                }
+            }
+            return userConnected;
+        }
+
+        public Medicament getMedicament(String p_nom, String p_forme, int p_dosage)
+        {
+            Medicament medic = new Medicament();
+            foreach (Medicament mdc in listMedicament)
+            {
+                if (mdc.getNom() == p_nom && mdc.getFormeGalenique() == p_forme && mdc.getDosage() == p_dosage)
+                    medic = mdc;
+            }
+            return medic;
+        }
+
+        public lotMedicament GetLotMedicament(long numeroEan)
+        {
+            List<lotMedicament> lm = new List<lotMedicament>();
+            lotMedicament lotmedicament = new lotMedicament();
+
+            foreach (lotMedicament lotmedic in listLotMedicament)
+            {
+                if (lotmedic.getNumeroEan() == numeroEan)
+                    lotmedicament = lotmedic;
+            }
+
+            return lotmedicament;
+        }
+
+        public void AddCommand(string p_command)
+        {
+            listUpdateCommands.Add(p_command);
+        }
+
+        public void sendUpdateCommands()
+        {
+            String commandsStr = null;
+
+            foreach(String str in listUpdateCommands)
+            {
+                commandsStr = commandsStr + str + ";";
+            }
+
+            TcpClient.sendData(commandsStr);
+        }
+
+        private static string MD5(string stringToHash)
+        {
+            MD5CryptoServiceProvider MD5Code = new MD5CryptoServiceProvider();
+            byte[] hashedString = Encoding.UTF8.GetBytes(stringToHash);
+            hashedString = MD5Code.ComputeHash(hashedString);
+            StringBuilder sb = new StringBuilder();
+            foreach (byte ba in hashedString)
+            {
+                sb.Append(ba.ToString("x2").ToLower());
+            }
+            return sb.ToString();
         }
     }
 }

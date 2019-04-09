@@ -36,10 +36,9 @@
             this.connect = new System.Windows.Forms.Button();
             this.invalidAuth = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.errorRecup = new System.Windows.Forms.Label();
-            this.normalUser = new System.Windows.Forms.Label();
-            this.adminUser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +57,8 @@
             // login
             // 
             this.login.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.login.Location = new System.Drawing.Point(278, 150);
+            this.login.Location = new System.Drawing.Point(277, 150);
+            this.login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(224, 22);
             this.login.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(278, 200);
+            this.passwordLabel.Location = new System.Drawing.Point(277, 199);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(102, 17);
             this.passwordLabel.TabIndex = 2;
@@ -78,15 +78,19 @@
             // password
             // 
             this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.password.Location = new System.Drawing.Point(278, 220);
+            this.password.Location = new System.Drawing.Point(277, 220);
+            this.password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(224, 22);
             this.password.TabIndex = 3;
+            this.password.UseSystemPasswordChar = true;
             // 
             // connect
             // 
             this.connect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.connect.Location = new System.Drawing.Point(315, 300);
+            this.connect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(156, 44);
             this.connect.TabIndex = 5;
@@ -112,22 +116,13 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::medicStockClient.Properties.Resources.medicStock;
             this.pictureBox1.Location = new System.Drawing.Point(592, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox2.Location = new System.Drawing.Point(-19, 409);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(822, 50);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
             // 
             // errorRecup
             // 
@@ -143,42 +138,38 @@
             this.errorRecup.Visible = false;
             this.errorRecup.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // normalUser
+            // label1
             // 
-            this.normalUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.normalUser.AutoSize = true;
-            this.normalUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.normalUser.ForeColor = System.Drawing.Color.Red;
-            this.normalUser.Location = new System.Drawing.Point(141, 300);
-            this.normalUser.Name = "normalUser";
-            this.normalUser.Size = new System.Drawing.Size(153, 18);
-            this.normalUser.TabIndex = 9;
-            this.normalUser.Text = "Normal User detected";
-            this.normalUser.Visible = false;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(299, 409);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Copyright (C) 2018 AGINFOS";
             // 
-            // adminUser
+            // pictureBox2
             // 
-            this.adminUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.adminUser.AutoSize = true;
-            this.adminUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminUser.ForeColor = System.Drawing.Color.Red;
-            this.adminUser.Location = new System.Drawing.Point(141, 326);
-            this.adminUser.Name = "adminUser";
-            this.adminUser.Size = new System.Drawing.Size(145, 18);
-            this.adminUser.TabIndex = 10;
-            this.adminUser.Text = "Admin User detected";
-            this.adminUser.Visible = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 380);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(800, 70);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // Authentification
             // 
+            this.AcceptButton = this.connect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.adminUser);
-            this.Controls.Add(this.normalUser);
-            this.Controls.Add(this.errorRecup);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.errorRecup);
             this.Controls.Add(this.invalidAuth);
             this.Controls.Add(this.connect);
             this.Controls.Add(this.pictureBox1);
@@ -187,6 +178,8 @@
             this.Controls.Add(this.login);
             this.Controls.Add(this.loginLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Authentification";
             this.Text = "Authentification";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -207,9 +200,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button connect;
         private System.Windows.Forms.Label invalidAuth;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label errorRecup;
-        private System.Windows.Forms.Label normalUser;
-        private System.Windows.Forms.Label adminUser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

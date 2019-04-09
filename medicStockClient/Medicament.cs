@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace medicStockClient
 {
-    class Medicament
+    public class Medicament
     {
         long numeroEan;
         String nom;

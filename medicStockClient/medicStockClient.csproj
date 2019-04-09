@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3A986CC5-86F0-4F7C-8BCF-023B13DE4096}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>medicStockClient</RootNamespace>
     <AssemblyName>medicStockClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -33,7 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>medicStockClient.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>medicStockICONE.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -65,10 +68,28 @@
     <Compile Include="mainMenu.Designer.cs">
       <DependentUpon>mainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="mainMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainMenuAdmin.Designer.cs">
+      <DependentUpon>mainMenuAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Medicament.cs" />
     <Compile Include="Metier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recapRecup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recapRecup.Designer.cs">
+      <DependentUpon>recapRecup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="recupMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recupMedicament.Designer.cs">
+      <DependentUpon>recupMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilisateur.cs" />
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
@@ -86,6 +107,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="recapRecup.resx">
+      <DependentUpon>recapRecup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recupMedicament.resx">
+      <DependentUpon>recupMedicament.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\medicStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="medicStockICONE.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

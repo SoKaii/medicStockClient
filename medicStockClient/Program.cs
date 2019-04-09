@@ -14,7 +14,6 @@ namespace medicStockClient
         [STAThread]
         static void Main()
         {
-            Utilisateur user = new Utilisateur("ZHKM0085", "Martin", "Thomas", true, "azerty");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authentification());

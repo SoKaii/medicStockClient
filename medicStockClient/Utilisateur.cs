@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace medicStockClient
 {
-    class Utilisateur
+   public class Utilisateur
     {
         string login;
         string nom;

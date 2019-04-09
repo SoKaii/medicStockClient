@@ -15,7 +15,7 @@ namespace medicStockClient
         Ihm ihm;
         public Authentification()
         {
-             ihm = new Ihm();
+            ihm = new Ihm();
             InitializeComponent();
         }
 
@@ -47,19 +47,25 @@ namespace medicStockClient
         private void connect_Click(object sender, EventArgs e)
         {
             invalidAuth.Visible = false;
-            normalUser.Visible = false;
-            adminUser.Visible = false;
             errorRecup.Visible = false;
 
             if (ihm.getAuthentification(login.Text.Trim(), password.Text.Trim()) == 0)
                 invalidAuth.Visible = true;
             else if (ihm.getAuthentification(login.Text, password.Text) == 1)
-                normalUser.Visible = true;
+            {
+                mainMenu mainMenu = new mainMenu(ihm, login.Text);
+                mainMenu.Show();
+                this.Hide();
+            }
             else if (ihm.getAuthentification(login.Text, password.Text) == 2)
-                adminUser.Visible = true;
+            {
+                mainMenu mainMenu = new mainMenu(ihm, login.Text);
+                mainMenu.Show();
+                this.Hide();
+            }
             else
                 errorRecup.Visible = true;
-
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)

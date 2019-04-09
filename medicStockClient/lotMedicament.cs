@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace medicStockClient
 {
-    class lotMedicament
+    public class lotMedicament
     {
         String numeroLot;
         int nombreBoite;

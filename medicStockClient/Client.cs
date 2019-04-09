@@ -40,7 +40,7 @@ namespace medicStockClient
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                throw new InvalidCastException(e.Message);
             }
         }
 
@@ -55,7 +55,8 @@ namespace medicStockClient
                     {
                         using (StreamWriter writer = new StreamWriter(networkStream))
                         {
-                            writer.Write(strToSent);
+                            writer.AutoFlush = true;
+                            writer.Write("TAMER");
                         }
                     }
                 }
