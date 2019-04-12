@@ -14,29 +14,26 @@ namespace medicStockClient
     {
         string dataString = null;
         NetworkStream networkStream = null;
+        string adress;
+        int port;
         TcpClient ClientTcp;
+        StreamReader reader;
+        StreamWriter writer;
+        
 
         public Client(String p_address, Int32 p_port)
         {
-           ClientTcp = new TcpClient(p_address, p_port);
-
+            ClientTcp = new TcpClient(p_address, p_port);
+            adress = p_address;
+            port = p_port;
             try
             {
-                using (networkStream = ClientTcp.GetStream())
-                {
-                    using (StreamReader reader = new StreamReader(networkStream))
-                    {
-                        using (StreamWriter writer = new StreamWriter(networkStream))
-                        {
-                            writer.AutoFlush = true;
-                            while (true)
-                            { 
-                                dataString = reader.ReadLine();
-                                break;
-                            }
-                        }
-                    }
-                }
+                networkStream = ClientTcp.GetStream();
+                writer = new StreamWriter(networkStream);
+                reader = new StreamReader(networkStream);
+
+                writer.AutoFlush = true;
+                dataString = reader.ReadLine();
             }
             catch (Exception e)
             {
@@ -44,28 +41,15 @@ namespace medicStockClient
             }
         }
 
-        public bool sendData(String strToSent)
+        public void sendData(List<String> strToSent)
         {
-
             try
             {
-                using (networkStream = ClientTcp.GetStream())
-                {
-                    using (StreamReader reader = new StreamReader(networkStream))
-                    {
-                        using (StreamWriter writer = new StreamWriter(networkStream))
-                        {
-                            writer.AutoFlush = true;
-                            writer.Write("TAMER");
-                        }
-                    }
-                }
-
-                return true;
+                 writer.WriteLine(strToSent);
             }
-            catch
+            catch (Exception e)
             {
-                return false;
+                throw new InvalidCastException(e.Message);
             }
 
         }

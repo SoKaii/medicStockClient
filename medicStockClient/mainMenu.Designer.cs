@@ -52,9 +52,7 @@
             // 
             // buttonRecupMedic
             // 
-            this.buttonRecupMedic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRecupMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRecupMedic.Location = new System.Drawing.Point(785, 176);
             this.buttonRecupMedic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRecupMedic.Name = "buttonRecupMedic";
@@ -66,9 +64,7 @@
             // 
             // buttonConsultMedic
             // 
-            this.buttonConsultMedic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonConsultMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonConsultMedic.Location = new System.Drawing.Point(785, 254);
             this.buttonConsultMedic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonConsultMedic.Name = "buttonConsultMedic";
@@ -76,14 +72,11 @@
             this.buttonConsultMedic.TabIndex = 1;
             this.buttonConsultMedic.Text = "Consultation médicament";
             this.buttonConsultMedic.UseVisualStyleBackColor = true;
-            this.buttonConsultMedic.Click += new System.EventHandler(this.buttonConsultMedic_Click);
             // 
             // buttonAddMedic
             // 
-            this.buttonAddMedic.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddMedic.Location = new System.Drawing.Point(645, 338);
+            this.buttonAddMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAddMedic.Location = new System.Drawing.Point(603, 323);
             this.buttonAddMedic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAddMedic.Name = "buttonAddMedic";
             this.buttonAddMedic.Size = new System.Drawing.Size(275, 53);
@@ -91,14 +84,11 @@
             this.buttonAddMedic.Text = "Ajout médicament";
             this.buttonAddMedic.UseVisualStyleBackColor = true;
             this.buttonAddMedic.Visible = false;
-            this.buttonAddMedic.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonAddUser
             // 
-            this.buttonAddUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddUser.Location = new System.Drawing.Point(941, 338);
+            this.buttonAddUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAddUser.Location = new System.Drawing.Point(952, 323);
             this.buttonAddUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAddUser.Name = "buttonAddUser";
             this.buttonAddUser.Size = new System.Drawing.Size(275, 53);
@@ -106,10 +96,10 @@
             this.buttonAddUser.Text = "Ajout utilisateur";
             this.buttonAddUser.UseVisualStyleBackColor = true;
             this.buttonAddUser.Visible = false;
-            this.buttonAddUser.Click += new System.EventHandler(this.button4_Click);
             // 
             // connectedLabel
             // 
+            this.connectedLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.connectedLabel.AutoSize = true;
             this.connectedLabel.BackColor = System.Drawing.Color.MistyRose;
             this.connectedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +112,7 @@
             // 
             // connectedAs
             // 
+            this.connectedAs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.connectedAs.AutoSize = true;
             this.connectedAs.BackColor = System.Drawing.Color.MistyRose;
             this.connectedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,7 +125,6 @@
             this.connectedAs.TabIndex = 7;
             this.connectedAs.Text = "connectedAs";
             this.connectedAs.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.connectedAs.Click += new System.EventHandler(this.connectedAs_Click);
             // 
             // pictureBox3
             // 
@@ -163,12 +153,10 @@
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(2548, 910);
             this.contentPanel.TabIndex = 10;
-            this.contentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.contentPanel_Paint);
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(821, 844);
@@ -180,18 +168,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Location = new System.Drawing.Point(0, 810);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(2478, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(2548, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_2);
             // 
             // headerPanel
             // 
@@ -206,11 +191,11 @@
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(1924, 1055);
             this.headerPanel.TabIndex = 10;
-            this.headerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerPanel_Paint);
             // 
             // Disconnect
             // 
             this.Disconnect.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
+            this.Disconnect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Disconnect.AutoSize = true;
             this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
             this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,7 +246,6 @@
             this.Name = "mainMenu";
             this.Text = "mainMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.mainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();

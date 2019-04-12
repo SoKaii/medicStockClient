@@ -68,12 +68,6 @@
     <Compile Include="mainMenu.Designer.cs">
       <DependentUpon>mainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="mainMenuAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mainMenuAdmin.Designer.cs">
-      <DependentUpon>mainMenuAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Medicament.cs" />
     <Compile Include="Metier.cs" />
     <Compile Include="Program.cs" />

@@ -34,7 +34,7 @@ namespace medicStockClient
         {
             Authentification auth = new Authentification();
             auth.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

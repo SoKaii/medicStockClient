@@ -309,14 +309,7 @@ namespace medicStockClient
 
         public void sendUpdateCommands()
         {
-            String commandsStr = null;
-
-            foreach(String str in listUpdateCommands)
-            {
-                commandsStr = commandsStr + str + ";";
-            }
-
-            TcpClient.sendData(commandsStr);
+            TcpClient.sendData(listUpdateCommands);
         }
 
         private static string MD5(string stringToHash)

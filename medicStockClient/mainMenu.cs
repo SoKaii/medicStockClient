@@ -27,56 +27,11 @@ namespace medicStockClient
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void connectedAs_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void headerPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Authentification auth = new Authentification();
             auth.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void buttonRecupMedic_Click(object sender, EventArgs e)
@@ -84,21 +39,6 @@ namespace medicStockClient
             recupMedicament recup = new recupMedicament(ihm, userConnected);
             recup.Show();
             this.Hide();
-        }
-
-        private void pictureBox1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contentPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void buttonConsultMedic_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

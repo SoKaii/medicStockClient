@@ -61,7 +61,7 @@ namespace medicStockClient
             ihm.sendCommands();
             Authentification auth = new Authentification();
             auth.Show();
-            this.Hide();
+            this.Close();
         }
 
         
