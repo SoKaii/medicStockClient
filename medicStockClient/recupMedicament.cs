@@ -112,8 +112,8 @@ namespace medicStockClient
                 for (int i = 0; i < addedMedic.Count; i++ )
                 {
                     int quantity = quantityAdded[i] - 2 * quantityAdded[i];
-                    ihm.addCommand("INSERT INTO interaction VALUES ('1','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + quantity.ToString() + "','" + 
-                        addedMedic[i].getNumeroEan().ToString() + "','" + userConnected.getLogin().ToString() + "','" + ihm.getLotMedic(addedMedic[i].getNumeroEan()).getNumeroLot() + "')" );
+                    ihm.addCommand("1;",DateTime.Now.ToString("yyyy-MM-dd") + ";", quantity.ToString() + ";", 
+                        addedMedic[i].getNumeroEan().ToString() + ";" , userConnected.getLogin().ToString() + ";" , ihm.getLotMedic(addedMedic[i].getNumeroEan()).getNumeroLot() + ";" );
                 }
 
                 recapRecup recap = new recapRecup(ihm, userConnected, addedMedicString, addedMedic);

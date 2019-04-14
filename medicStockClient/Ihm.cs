@@ -52,9 +52,9 @@ namespace medicStockClient
 
         }
 
-        public void addCommand(string p_command)
+        public void addCommand(string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
         {
-            metier.AddCommand(p_command);
+            metier.AddCommand(p_type,p_date,p_quantity,p_ean,p_login,p_nLot);
         }
 
         public void sendCommands()

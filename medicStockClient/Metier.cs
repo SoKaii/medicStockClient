@@ -20,7 +20,7 @@ namespace medicStockClient
         private List<Medicament> listMedicament = new List<Medicament>(); // Liste de tous les médicaments
 
         private List<long> listChoicedMedicament = new List<long>(); // Liste de tous les médicaments choisis par l'utilisateur afin d'y effectuer une interaction
-        private List<String> listUpdateCommands = new List<String>(); // Liste de toutes les commandes SQL générées durant l'utilisation de l'application 
+        
 
         private String serverAddress = "localhost"; // Configuration de l'adresse IP du serveur 
         private Int32 serverPort = 22; // Configuration du port pour le serveur
@@ -302,14 +302,14 @@ namespace medicStockClient
             return lotmedicament;
         }
 
-        public void AddCommand(string p_command)
+        public void AddCommand(string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
         {
-            listUpdateCommands.Add(p_command);
+            TcpClient.AddCommands(p_type, p_date, p_quantity, p_ean, p_login, p_nLot);
         }
 
         public void sendUpdateCommands()
         {
-            TcpClient.sendData(listUpdateCommands);
+            TcpClient.sendData();
         }
 
         private static string MD5(string stringToHash)

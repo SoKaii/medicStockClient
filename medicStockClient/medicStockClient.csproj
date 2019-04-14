@@ -59,6 +59,12 @@
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="consultMedic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultMedic.Designer.cs">
+      <DependentUpon>consultMedic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ihm.cs" />
     <Compile Include="Interaction.cs" />
     <Compile Include="lotMedicament.cs" />
@@ -87,6 +93,9 @@
     <Compile Include="Utilisateur.cs" />
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultMedic.resx">
+      <DependentUpon>consultMedic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainMenu.resx">
       <DependentUpon>mainMenu.cs</DependentUpon>

@@ -12,14 +12,16 @@ namespace medicStockClient
 {
     class Client
     {
-        string dataString = null;
-        NetworkStream networkStream = null;
-        string adress;
-        int port;
-        TcpClient ClientTcp;
-        StreamReader reader;
-        StreamWriter writer;
-        
+        private string dataString = null;
+        private NetworkStream networkStream = null;
+        private string adress;
+        private int port;
+        private TcpClient ClientTcp;
+        private StreamReader reader;
+        private StreamWriter writer;
+        private String strToSent;
+        private List<String> listUpdateCommands = new List<String>(); // Liste de toutes les commandes SQL générées durant l'utilisation de l'application 
+
 
         public Client(String p_address, Int32 p_port)
         {
@@ -41,10 +43,20 @@ namespace medicStockClient
             }
         }
 
-        public void sendData(List<String> strToSent)
+        public void AddCommands(string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
+        {
+           listUpdateCommands.Add("INSERT INTO interaction VALUES ('" + p_type + "','" + p_date + "','" + p_quantity + "','" + p_ean + "','" + p_login + "','" + p_nLot + ");");
+        }
+
+        public void sendData()
         {
             try
             {
+                foreach (string str in listUpdateCommands)
+                {
+                    strToSent = strToSent + str;
+                }
+
                  writer.WriteLine(strToSent);
             }
             catch (Exception e)

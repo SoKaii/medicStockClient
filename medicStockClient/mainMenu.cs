@@ -40,5 +40,12 @@ namespace medicStockClient
             recup.Show();
             this.Hide();
         }
+
+        private void buttonConsultMedic_Click(object sender, EventArgs e)
+        {
+            consultMedic consult = new consultMedic(ihm, userConnected);
+            consult.Show();
+            this.Hide();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace medicStockClient
             listLB.Add(listBox6);
             listLB.Add(listBox7);
             listLB.Add(listBox8);
+           
 
             for (int i = 0; i < addedFullMedic.Count; i++)
             {
@@ -57,14 +58,15 @@ namespace medicStockClient
 
         private void Disconnect_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
             ihm.sendCommands();
             Authentification auth = new Authentification();
             auth.Show();
             this.Close();
         }
 
-        
-
+        private void recapRecup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ihm.sendCommands();
+        }
     }
 }
