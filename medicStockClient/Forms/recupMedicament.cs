@@ -32,13 +32,17 @@ namespace medicStockClient
 
         private void Disconnect_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ihm.sendCommands();
             Authentification auth = new Authentification();
             auth.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            actualStockTitle.Visible = false;
+            actualStock.Visible = false;
+            alreadyChoosed.Visible = false;
             formeMedicList.Items.Clear();
             formeMedicList.ResetText();
             dosageMedicList.Items.Clear();
@@ -55,6 +59,10 @@ namespace medicStockClient
         }
         private void formeMedicList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            actualStockTitle.Visible = false;
+            actualStock.Visible = false;
+            alreadyChoosed.Visible = false;
+
             dosageMedicList.Items.Clear();
             dosageMedicList.ResetText();
             configureDosageList(nameMedicList.SelectedItem.ToString(), formeMedicList.SelectedItem.ToString());
@@ -65,6 +73,14 @@ namespace medicStockClient
             {
                 dosageMedicList.Items.Add(str);
             }
+        }
+
+        private void dosageMedicList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Medicament tempMedic = ihm.getMedic(nameMedicList.Text, formeMedicList.Text, Int32.Parse(dosageMedicList.Text));
+            actualStock.Text = ihm.getActualStock(tempMedic.getNumeroEan()).ToString();
+            actualStockTitle.Visible = true;
+            actualStock.Visible = true;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -79,15 +95,35 @@ namespace medicStockClient
             noMedicError.Visible = false;
             quantityError.Visible = false;
             listLimitTB.Visible = false;
-       
+            stockReached.Visible = false;
+            alreadyChoosed.Visible = false;
+
+            
             if (dosageMedicList.SelectedIndex == -1)
                 noMedicError.Visible = true;
-            if (quantityMedic.Text == "" || quantityMedic.Text == "0") 
+            if (quantityMedic.Text == "" || quantityMedic.Text == "0")
                 quantityError.Visible = true;
+            else if (Int32.Parse(quantityMedic.Text) > Int32.Parse(actualStock.Text))
+                stockReached.Visible = true;
+
+            foreach (Medicament medic in addedMedic)
+            {
+                if (ihm.getMedic(nameMedicList.Text, formeMedicList.Text, Int32.Parse(dosageMedicList.Text)) == medic)
+                {
+                    alreadyChoosed.Visible = true;
+                    noMedicError.Visible = false;
+                    quantityError.Visible = false;
+                    listLimitTB.Visible = false;
+                    stockReached.Visible = false;
+                }
+                }
+
             if (i == 8)
                 listLimitTB.Visible = true;
-            else if (dosageMedicList.SelectedIndex != -1 && quantityMedic.Text != "" && quantityMedic.Text != "0")
+            else if (dosageMedicList.SelectedIndex != -1 && quantityMedic.Text != "" && quantityMedic.Text != "0" && stockReached.Visible == false && alreadyChoosed.Visible == false)
             {
+                actualStockTitle.Visible = false;
+                actualStock.Visible = false;
                 BeginAddMedic.Visible = false;
                 addedMedicString.Add(quantityMedic.Text + " " + nameMedicList.Text + " " + dosageMedicList.Text + "mg en " + formeMedicList.Text);
                 addedMedic.Add(ihm.getMedic(nameMedicList.Text, formeMedicList.Text, Int32.Parse(dosageMedicList.Text)));
@@ -105,6 +141,7 @@ namespace medicStockClient
 
         private void Validate_Click(object sender, EventArgs e)
         {
+            string id = null;
             if (addedMedicString.Count == 0)
                 noMedicError.Visible = true;
             else
@@ -112,8 +149,16 @@ namespace medicStockClient
                 for (int i = 0; i < addedMedic.Count; i++ )
                 {
                     int quantity = quantityAdded[i] - 2 * quantityAdded[i];
-                    ihm.addCommand("1;",DateTime.Now.ToString("yyyy-MM-dd") + ";", quantity.ToString() + ";", 
-                        addedMedic[i].getNumeroEan().ToString() + ";" , userConnected.getLogin().ToString() + ";" , ihm.getLotMedic(addedMedic[i].getNumeroEan()).getNumeroLot() + ";" );
+                    id = DateTime.Now.ToString("ddMMyyyyHHmmss") + userConnected.getLogin() + addedMedic[i].getNumeroEan().ToString();
+                    ihm.addCommand(id,"1",DateTime.Now.ToString("yyyy-MM-dd"), quantity.ToString(), 
+                        addedMedic[i].getNumeroEan().ToString(), userConnected.getLogin().ToString(), ihm.getLotMedic(addedMedic[i].getNumeroEan()).getNumeroLot());
+                    if (ihm.getLotMedic(addedMedic[i].getNumeroEan()).getCommandeAuto() == true)
+                    {
+                        if (ihm.getLotMedic(addedMedic[i].getNumeroEan()).getNombreBoite() <= ihm.getLotMedic(addedMedic[i].getNumeroEan()).getSeuilMin())
+                        {
+                            ihm.sendOrderMail(ihm.getLotMedic(addedMedic[i].getNumeroEan()).getNumeroEan());
+                        }
+                    }
                 }
 
                 recapRecup recap = new recapRecup(ihm, userConnected, addedMedicString, addedMedic);
@@ -121,10 +166,13 @@ namespace medicStockClient
                 this.Hide();
             }
         }
-
-        private void LBAddedMedic_SelectedIndexChanged(object sender, EventArgs e)
+        private void recupMedicament_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            ihm.sendCommands();
+            ihm.closeConnection();
+            Application.Exit();
         }
+
+      
     }
 }

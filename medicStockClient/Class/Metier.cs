@@ -81,9 +81,9 @@ namespace medicStockClient
                 listUtilisateur.Add(new Utilisateur(listUserAttributes[y], listUserAttributes[y + 1], listUserAttributes[y + 2], ToBoolean(listUserAttributes[y + 3]), listUserAttributes[y + 4]));
             }
 
-            for (int y = 0; y < cleanList(listInterAttributes).Count; y = y + 6)
+            for (int y = 0; y < cleanList(listInterAttributes).Count; y = y + 7)
             {
-                listInteraction.Add(new Interaction(Int32.Parse(listInterAttributes[y]), listInterAttributes[y + 1], Int32.Parse(listInterAttributes[y + 2]), Int64.Parse(listInterAttributes[y + 3]), listInterAttributes[y + 4], Int32.Parse(listInterAttributes[y + 5])));
+                listInteraction.Add(new Interaction(listInterAttributes[y],Int32.Parse(listInterAttributes[y+1]), listInterAttributes[y + 2], Int32.Parse(listInterAttributes[y + 3]), Int64.Parse(listInterAttributes[y + 4]), listInterAttributes[y + 5], Int32.Parse(listInterAttributes[y + 6])));
             }
 
             for (int y = 0; y < cleanList(listLotMedicAttributes).Count; y = y + 10)
@@ -128,16 +128,16 @@ namespace medicStockClient
         public List<String> configureChoiceMedic()
         {
             List<String> listMedicName = new List<String>();
-            bool tamer = true;
+            bool alreadyPresent = true;
 
             foreach (Medicament medic in listMedicament)
             {
                 foreach (String str in listMedicName)
                 {
                     if (medic.getNom() == str)
-                        tamer = false;
+                        alreadyPresent = false;
                 }
-                if (tamer == true)
+                if (alreadyPresent == true)
                     listMedicName.Add(medic.getNom());
             }
             return listMedicName;
@@ -146,11 +146,19 @@ namespace medicStockClient
         public List<String> configureChoiceMedic(String p_choicedName)
         {
             List<String> listMedicForme = new List<String>();
-
+            bool alreadyPresent = true;
             foreach (Medicament medic in listMedicament)
             {
                 if (medic.getNom() == p_choicedName)
-                    listMedicForme.Add(medic.getFormeGalenique());
+                {
+                    foreach (String str in listMedicForme)
+                    {
+                        if (medic.getFormeGalenique() == str)
+                            alreadyPresent = false;
+                    }
+                    if (alreadyPresent == true)
+                        listMedicForme.Add(medic.getFormeGalenique());
+                }
             }
             return listMedicForme;
         }
@@ -183,7 +191,7 @@ namespace medicStockClient
             }
 
             var fromAddress = new MailAddress("medicStockAginfos@gmail.com", "medicStock");
-            var toAddress = new MailAddress("t.martin92500@hotmail.fr", "Thomas Martin");
+            var toAddress = new MailAddress(lotMedicToOrder.getMailFournisseurPrioritaire(), medicToOrder.getNom());
             const string fromPassword = "aginfosaforp";
             string subject = "Commande de " + medicToOrder.getNom() + " pour l'Hopital Innovation Aforp";
             string body = "Ceci est un message automatique envoyé par l'application medicalStock \n\n" +
@@ -192,7 +200,6 @@ namespace medicStockClient
                 + "Merci de nous livrer cette commande au plus tôt possible\n\n"
                 + "Application medicalStock \n Gestion de Stock de l'Hopital Innovation Aforp\n\n"
                 + "Ce mail est automatique, veuillez ne pas y répondre";
-
 
             var smtp = new SmtpClient
             {
@@ -230,26 +237,7 @@ namespace medicStockClient
 
             return dataString;
         }
-        public static bool ToBoolean(string value)
-        {
-            switch (value.ToLower())
-            {
-                case "true":
-                    return true;
-                case "t":
-                    return true;
-                case "1":
-                    return true;
-                case "0":
-                    return false;
-                case "false":
-                    return false;
-                case "f":
-                    return false;
-                default:
-                    throw new InvalidCastException("You can't cast that value to a bool!");
-            }
-        }
+        
 
         public static List<String> cleanList(List<String> p_list)
         {
@@ -302,14 +290,71 @@ namespace medicStockClient
             return lotmedicament;
         }
 
-        public void AddCommand(string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
+        public int getActualStock(long p_ean)
         {
-            TcpClient.AddCommands(p_type, p_date, p_quantity, p_ean, p_login, p_nLot);
+            int stock = 0;
+            foreach(lotMedicament lm in listLotMedicament)
+            {
+                if (lm.getNumeroEan() == p_ean)
+                    stock = lm.getNombreBoite();
+            }
+
+            foreach (Interaction itr in listInteraction)
+            {
+                if (itr.getNumeroEan() == p_ean && itr.getType() == 1)
+                {
+                    stock = stock + itr.getNombreBoite();
+                }
+            }
+            return stock;
+        }
+
+        public void AddCommand(string p_id, string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
+        {
+            listInteraction.Add(new Interaction(p_id, Int32.Parse(p_type), p_date, Int32.Parse(p_quantity), Int64.Parse(p_ean), p_login, Int32.Parse(p_nLot)));
+            TcpClient.AddCommands(p_id, p_type, p_date, p_quantity, p_ean, p_login, p_nLot);
+        }
+
+        public void AddCommandNewUser(string p_login, string p_nom, string p_prenom, string p_admin, string p_password)
+        {
+            TcpClient.AddCommandsNewUser(p_login, p_nom, p_prenom, p_admin, p_password);
+        }
+
+        public void AddCommandNewMedic(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage, string p_numeroLot, string p_nombreBoite, string p_dateConditionnement, string p_localisation, string p_elevation,
+            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto)
+        {
+            TcpClient.AddCommandsNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage, p_numeroLot, p_nombreBoite, p_dateConditionnement, p_localisation, p_elevation, p_mailFournisseur, p_seuilMin, p_quantiteCommandeAuto, p_commandeAuto);
         }
 
         public void sendUpdateCommands()
         {
             TcpClient.sendData();
+        }
+
+        public void closeConnection()
+        {
+            TcpClient.closeConnection();
+        }
+
+        public static bool ToBoolean(string value)
+        {
+            switch (value.ToLower())
+            {
+                case "true":
+                    return true;
+                case "t":
+                    return true;
+                case "1":
+                    return true;
+                case "0":
+                    return false;
+                case "false":
+                    return false;
+                case "f":
+                    return false;
+                default:
+                    throw new InvalidCastException("You can't cast that value to a bool!");
+            }
         }
 
         private static string MD5(string stringToHash)

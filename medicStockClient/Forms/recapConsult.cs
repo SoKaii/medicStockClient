@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace medicStockClient
 {
-    public partial class recapRecup : Form
+    public partial class recapConsult : Form
     {
         Ihm ihm;
         Utilisateur userConnected;
@@ -18,7 +18,7 @@ namespace medicStockClient
         List<Medicament> addedFullMedic = new List<Medicament>();
         List<ListBox> listLB = new List<ListBox>();
 
-        public recapRecup(Ihm p_ihm, Utilisateur p_userConnected, List<String> p_addedMedic, List<Medicament> p_addedFullMedic)
+        public recapConsult(Ihm p_ihm, Utilisateur p_userConnected, List<String> p_addedMedic, List<Medicament> p_addedFullMedic)
         {
             ihm = p_ihm;
             userConnected = p_userConnected;
@@ -34,17 +34,17 @@ namespace medicStockClient
             listLB.Add(listBox6);
             listLB.Add(listBox7);
             listLB.Add(listBox8);
-           
 
             for (int i = 0; i < addedFullMedic.Count; i++)
             {
                 listLB[i].Visible = true;
-                listLB[i].Items.Add(addedFullMedic[i].getNom());
-                listLB[i].Items.Add(addedFullMedic[i].getDosage() + "mg");
-                listLB[i].Items.Add(addedFullMedic[i].getFormeGalenique());
+                listLB[i].Items.Add("EAN : " + addedFullMedic[i].getNumeroEan());
+                listLB[i].Items.Add("Nom : " + addedFullMedic[i].getNom());
                 listLB[i].Items.Add(" ");
-                listLB[i].Items.Add("Localisation : " + ihm.getLotMedic(addedFullMedic[i].getNumeroEan()).getLocalisation());
-                listLB[i].Items.Add("Elevation : " + ihm.getLotMedic(addedFullMedic[i].getNumeroEan()).getElevation());
+                listLB[i].Items.Add("Substance Active : " + addedFullMedic[i].getSubstanceActive());
+                listLB[i].Items.Add("Dosage : " + addedFullMedic[i].getDosage() + "mg");
+                listLB[i].Items.Add("Catégorie : " + addedFullMedic[i].getCategorie());
+                listLB[i].Items.Add("Forme : " + addedFullMedic[i].getFormeGalenique());
             }
             connectedAs.Text = userConnected.getPrenom() + " " + userConnected.getNom().ToUpper();
         }
@@ -61,12 +61,14 @@ namespace medicStockClient
             ihm.sendCommands();
             Authentification auth = new Authentification();
             auth.Show();
-            this.Close();
+            this.Hide();
         }
-
-        private void recapRecup_FormClosing(object sender, FormClosingEventArgs e)
+        
+        private void recapConsult_FormClosing(object sender, FormClosingEventArgs e)
         {
             ihm.sendCommands();
+            ihm.closeConnection();
+            Application.Exit();
         }
     }
 }

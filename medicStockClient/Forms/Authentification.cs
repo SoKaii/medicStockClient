@@ -19,31 +19,6 @@ namespace medicStockClient
             InitializeComponent();
         }
 
-        private void Authentification_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passwordLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void connect_Click(object sender, EventArgs e)
         {
             invalidAuth.Visible = false;
@@ -68,9 +43,10 @@ namespace medicStockClient
             
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void Authentification_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            ihm.closeConnection();
+            Application.Exit();
         }
     }
 }

@@ -29,9 +29,10 @@ namespace medicStockClient
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            ihm.sendCommands();
             Authentification auth = new Authentification();
             auth.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void buttonRecupMedic_Click(object sender, EventArgs e)
@@ -47,5 +48,20 @@ namespace medicStockClient
             consult.Show();
             this.Hide();
         }
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+            addUser addUser = new addUser(ihm, userConnected);
+            addUser.Show();
+            this.Hide();
+        }
+
+        private void mainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ihm.sendCommands();
+            ihm.closeConnection();
+            Application.Exit();
+        }
+
+       
     }
 }

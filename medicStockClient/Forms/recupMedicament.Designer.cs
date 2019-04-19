@@ -42,18 +42,22 @@
             this.dosageMedicList = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Add = new System.Windows.Forms.Button();
-            this.Validate = new System.Windows.Forms.Button();
+            this.Validation = new System.Windows.Forms.Button();
             this.listAddedMedic = new System.Windows.Forms.Panel();
             this.LBAddedMedic = new System.Windows.Forms.ListBox();
             this.BeginAddMedic = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.actualStock = new System.Windows.Forms.Label();
+            this.actualStockTitle = new System.Windows.Forms.Label();
+            this.stockReached = new System.Windows.Forms.Label();
             this.listLimitTB = new System.Windows.Forms.Label();
             this.quantityMedic = new System.Windows.Forms.NumericUpDown();
             this.quantityError = new System.Windows.Forms.Label();
             this.noMedicError = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.alreadyChoosed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -194,6 +198,7 @@
             this.dosageMedicList.Name = "dosageMedicList";
             this.dosageMedicList.Size = new System.Drawing.Size(299, 21);
             this.dosageMedicList.TabIndex = 26;
+            this.dosageMedicList.SelectedIndexChanged += new System.EventHandler(this.dosageMedicList_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -211,7 +216,7 @@
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Add.BackColor = System.Drawing.Color.OldLace;
             this.Add.Location = new System.Drawing.Point(724, 538);
-            this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(115, 44);
             this.Add.TabIndex = 28;
@@ -219,18 +224,18 @@
             this.Add.UseVisualStyleBackColor = false;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // Validate
+            // Validation
             // 
-            this.Validate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Validate.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Validate.Location = new System.Drawing.Point(949, 538);
-            this.Validate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Validate.Name = "Validate";
-            this.Validate.Size = new System.Drawing.Size(115, 44);
-            this.Validate.TabIndex = 29;
-            this.Validate.Text = "VALIDER";
-            this.Validate.UseVisualStyleBackColor = false;
-            this.Validate.Click += new System.EventHandler(this.Validate_Click);
+            this.Validation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Validation.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Validation.Location = new System.Drawing.Point(949, 538);
+            this.Validation.Margin = new System.Windows.Forms.Padding(2);
+            this.Validation.Name = "Validation";
+            this.Validation.Size = new System.Drawing.Size(115, 44);
+            this.Validation.TabIndex = 29;
+            this.Validation.Text = "VALIDER";
+            this.Validation.UseVisualStyleBackColor = false;
+            this.Validation.Click += new System.EventHandler(this.Validate_Click);
             // 
             // listAddedMedic
             // 
@@ -254,11 +259,10 @@
             this.LBAddedMedic.FormattingEnabled = true;
             this.LBAddedMedic.ItemHeight = 20;
             this.LBAddedMedic.Location = new System.Drawing.Point(5, 44);
-            this.LBAddedMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LBAddedMedic.Margin = new System.Windows.Forms.Padding(2);
             this.LBAddedMedic.Name = "LBAddedMedic";
             this.LBAddedMedic.Size = new System.Drawing.Size(408, 444);
             this.LBAddedMedic.TabIndex = 2;
-            this.LBAddedMedic.SelectedIndexChanged += new System.EventHandler(this.LBAddedMedic_SelectedIndexChanged);
             // 
             // BeginAddMedic
             // 
@@ -286,6 +290,10 @@
             // 
             // headerPanel
             // 
+            this.headerPanel.Controls.Add(this.alreadyChoosed);
+            this.headerPanel.Controls.Add(this.actualStock);
+            this.headerPanel.Controls.Add(this.actualStockTitle);
+            this.headerPanel.Controls.Add(this.stockReached);
             this.headerPanel.Controls.Add(this.listLimitTB);
             this.headerPanel.Controls.Add(this.quantityMedic);
             this.headerPanel.Controls.Add(this.quantityError);
@@ -293,7 +301,7 @@
             this.headerPanel.Controls.Add(this.label6);
             this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Controls.Add(this.listAddedMedic);
-            this.headerPanel.Controls.Add(this.Validate);
+            this.headerPanel.Controls.Add(this.Validation);
             this.headerPanel.Controls.Add(this.Add);
             this.headerPanel.Controls.Add(this.label5);
             this.headerPanel.Controls.Add(this.dosageMedicList);
@@ -314,6 +322,46 @@
             this.headerPanel.Size = new System.Drawing.Size(1860, 862);
             this.headerPanel.TabIndex = 11;
             // 
+            // actualStock
+            // 
+            this.actualStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.actualStock.AutoSize = true;
+            this.actualStock.BackColor = System.Drawing.Color.White;
+            this.actualStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.actualStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualStock.Location = new System.Drawing.Point(1163, 489);
+            this.actualStock.Name = "actualStock";
+            this.actualStock.Size = new System.Drawing.Size(18, 19);
+            this.actualStock.TabIndex = 39;
+            this.actualStock.Text = "0";
+            this.actualStock.Visible = false;
+            // 
+            // actualStockTitle
+            // 
+            this.actualStockTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.actualStockTitle.AutoSize = true;
+            this.actualStockTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualStockTitle.Location = new System.Drawing.Point(1102, 489);
+            this.actualStockTitle.Name = "actualStockTitle";
+            this.actualStockTitle.Size = new System.Drawing.Size(55, 17);
+            this.actualStockTitle.TabIndex = 38;
+            this.actualStockTitle.Text = "Stock : ";
+            this.actualStockTitle.Visible = false;
+            // 
+            // stockReached
+            // 
+            this.stockReached.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.stockReached.AutoSize = true;
+            this.stockReached.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockReached.ForeColor = System.Drawing.Color.Red;
+            this.stockReached.Location = new System.Drawing.Point(1007, 519);
+            this.stockReached.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.stockReached.Name = "stockReached";
+            this.stockReached.Size = new System.Drawing.Size(101, 17);
+            this.stockReached.TabIndex = 37;
+            this.stockReached.Text = "Stock dépassé";
+            this.stockReached.Visible = false;
+            // 
             // listLimitTB
             // 
             this.listLimitTB.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -332,7 +380,7 @@
             // 
             this.quantityMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.quantityMedic.Location = new System.Drawing.Point(766, 489);
-            this.quantityMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quantityMedic.Margin = new System.Windows.Forms.Padding(2);
             this.quantityMedic.Name = "quantityMedic";
             this.quantityMedic.Size = new System.Drawing.Size(298, 20);
             this.quantityMedic.TabIndex = 35;
@@ -387,6 +435,20 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
+            // alreadyChoosed
+            // 
+            this.alreadyChoosed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.alreadyChoosed.AutoSize = true;
+            this.alreadyChoosed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alreadyChoosed.ForeColor = System.Drawing.Color.Red;
+            this.alreadyChoosed.Location = new System.Drawing.Point(476, 552);
+            this.alreadyChoosed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.alreadyChoosed.Name = "alreadyChoosed";
+            this.alreadyChoosed.Size = new System.Drawing.Size(244, 17);
+            this.alreadyChoosed.TabIndex = 40;
+            this.alreadyChoosed.Text = "Vous avez déjà choisi ce médicament";
+            this.alreadyChoosed.Visible = false;
+            // 
             // recupMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,6 +458,7 @@
             this.Name = "recupMedicament";
             this.Text = "recupMedicament";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.recupMedicament_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -424,7 +487,7 @@
         private System.Windows.Forms.ComboBox dosageMedicList;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Add;
-        public System.Windows.Forms.Button Validate;
+        public System.Windows.Forms.Button Validation;
         private System.Windows.Forms.Panel listAddedMedic;
         private System.Windows.Forms.ListBox LBAddedMedic;
         private System.Windows.Forms.Label BeginAddMedic;
@@ -436,5 +499,9 @@
         private System.Windows.Forms.Label quantityError;
         private System.Windows.Forms.NumericUpDown quantityMedic;
         private System.Windows.Forms.Label listLimitTB;
+        private System.Windows.Forms.Label actualStock;
+        private System.Windows.Forms.Label actualStockTitle;
+        private System.Windows.Forms.Label stockReached;
+        private System.Windows.Forms.Label alreadyChoosed;
     }
 }

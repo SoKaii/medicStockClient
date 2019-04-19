@@ -8,6 +8,7 @@ namespace medicStockClient
 {
     class Interaction
     {
+        string id;
         int type;
         string date;
         int nombreBoite;
@@ -17,6 +18,7 @@ namespace medicStockClient
 
         public Interaction()
         {
+            id = null;
             type = 0;
             date = null;
             nombreBoite = 0;
@@ -25,8 +27,9 @@ namespace medicStockClient
             numeroLot = 0;
         }
 
-        public Interaction(int p_type,String p_date,int p_nombreBoite, long p_numeroEan, String p_loginUser, int p_numeroLot)
+        public Interaction(string p_id,int p_type,String p_date,int p_nombreBoite, long p_numeroEan, String p_loginUser, int p_numeroLot)
         {
+            id = p_id;
             type = p_type;
             date = p_date;
             nombreBoite = p_nombreBoite;
@@ -53,6 +56,9 @@ namespace medicStockClient
 
         public int getNumeroLot()
         { return numeroLot; }
+
+        public string getId()
+        { return id; }
 
     }
 }

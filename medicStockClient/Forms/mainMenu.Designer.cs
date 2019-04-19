@@ -37,15 +37,15 @@
             this.connectedAs = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.Disconnect = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.header = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.contentPanel.SuspendLayout();
-            this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.header)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,7 @@
             this.buttonAddUser.Text = "Ajout utilisateur";
             this.buttonAddUser.UseVisualStyleBackColor = true;
             this.buttonAddUser.Visible = false;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // connectedLabel
             // 
@@ -104,12 +105,12 @@
             this.connectedLabel.AutoSize = true;
             this.connectedLabel.BackColor = System.Drawing.Color.MistyRose;
             this.connectedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectedLabel.Location = new System.Drawing.Point(511, 61);
+            this.connectedLabel.Location = new System.Drawing.Point(507, 61);
             this.connectedLabel.Margin = new System.Windows.Forms.Padding(0);
             this.connectedLabel.Name = "connectedLabel";
-            this.connectedLabel.Size = new System.Drawing.Size(167, 20);
+            this.connectedLabel.Size = new System.Drawing.Size(194, 20);
             this.connectedLabel.TabIndex = 6;
-            this.connectedLabel.Text = "You\'re connected as : ";
+            this.connectedLabel.Text = "Connecté(e) en tant que : ";
             // 
             // connectedAs
             // 
@@ -119,7 +120,7 @@
             this.connectedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectedAs.ForeColor = System.Drawing.Color.OliveDrab;
             this.connectedAs.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.connectedAs.Location = new System.Drawing.Point(699, 61);
+            this.connectedAs.Location = new System.Drawing.Point(695, 61);
             this.connectedAs.Margin = new System.Windows.Forms.Padding(2, 2, 8, 0);
             this.connectedAs.Name = "connectedAs";
             this.connectedAs.Size = new System.Drawing.Size(114, 20);
@@ -136,7 +137,7 @@
             this.contentPanel.Controls.Add(this.buttonAddMedic);
             this.contentPanel.Controls.Add(this.buttonAddUser);
             this.contentPanel.Controls.Add(this.pictureBox1);
-            this.contentPanel.Location = new System.Drawing.Point(-49, -59);
+            this.contentPanel.Location = new System.Drawing.Point(-53, 137);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(1911, 739);
             this.contentPanel.TabIndex = 10;
@@ -154,47 +155,6 @@
             this.label2.Text = "Copyright (C) 2018 AGINFOS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // headerPanel
-            // 
-            this.headerPanel.Controls.Add(this.Disconnect);
-            this.headerPanel.Controls.Add(this.pictureBox3);
-            this.headerPanel.Controls.Add(this.connectedAs);
-            this.headerPanel.Controls.Add(this.connectedLabel);
-            this.headerPanel.Controls.Add(this.header);
-            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerPanel.Location = new System.Drawing.Point(0, 0);
-            this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1448, 857);
-            this.headerPanel.TabIndex = 10;
-            // 
-            // Disconnect
-            // 
-            this.Disconnect.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.Disconnect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Disconnect.AutoSize = true;
-            this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
-            this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Disconnect.LinkColor = System.Drawing.Color.Red;
-            this.Disconnect.Location = new System.Drawing.Point(53, 61);
-            this.Disconnect.Name = "Disconnect";
-            this.Disconnect.Size = new System.Drawing.Size(102, 20);
-            this.Disconnect.TabIndex = 16;
-            this.Disconnect.TabStop = true;
-            this.Disconnect.Text = "Deconnexion";
-            this.Disconnect.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(874, 697);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Copyright (C) 2018 AGINFOS";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -207,12 +167,41 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // headerPanel
+            // 
+            this.headerPanel.Controls.Add(this.Disconnect);
+            this.headerPanel.Controls.Add(this.pictureBox3);
+            this.headerPanel.Controls.Add(this.connectedAs);
+            this.headerPanel.Controls.Add(this.connectedLabel);
+            this.headerPanel.Controls.Add(this.header);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(1441, 857);
+            this.headerPanel.TabIndex = 10;
+            // 
+            // Disconnect
+            // 
+            this.Disconnect.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
+            this.Disconnect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Disconnect.AutoSize = true;
+            this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
+            this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Disconnect.LinkColor = System.Drawing.Color.Red;
+            this.Disconnect.Location = new System.Drawing.Point(49, 61);
+            this.Disconnect.Name = "Disconnect";
+            this.Disconnect.Size = new System.Drawing.Size(102, 20);
+            this.Disconnect.TabIndex = 16;
+            this.Disconnect.TabStop = true;
+            this.Disconnect.Text = "Deconnexion";
+            this.Disconnect.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1275, 7);
+            this.pictureBox3.Location = new System.Drawing.Point(1268, 7);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(128, 123);
@@ -224,18 +213,30 @@
             // 
             this.header.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.header.BackColor = System.Drawing.Color.MistyRose;
-            this.header.Location = new System.Drawing.Point(3, 0);
+            this.header.Location = new System.Drawing.Point(-1, 0);
             this.header.Margin = new System.Windows.Forms.Padding(0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1443, 137);
             this.header.TabIndex = 15;
             this.header.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(870, 893);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Copyright (C) 2018 AGINFOS";
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1448, 657);
+            this.ClientSize = new System.Drawing.Size(1441, 853);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.headerPanel);
@@ -244,11 +245,12 @@
             this.Name = "mainMenu";
             this.Text = "mainMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainMenu_FormClosing);
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.header)).EndInit();
             this.ResumeLayout(false);

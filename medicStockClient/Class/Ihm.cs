@@ -52,14 +52,37 @@ namespace medicStockClient
 
         }
 
-        public void addCommand(string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
+        public int getActualStock(long p_ean)
         {
-            metier.AddCommand(p_type,p_date,p_quantity,p_ean,p_login,p_nLot);
+            return metier.getActualStock(p_ean);
         }
 
+        public void addCommand(string p_id, string p_type, string p_date, string p_quantity, string p_ean, string p_login, string p_nLot)
+        {
+            metier.AddCommand(p_id,p_type,p_date,p_quantity,p_ean,p_login,p_nLot);
+        }
+        public void addCommandNewUser(string p_login, string p_nom, string p_prenom, string p_admin, string p_password)
+        {
+            metier.AddCommandNewUser(p_login, p_nom, p_prenom, p_admin, p_password);
+        }
+        public void addCommandNewMedicament(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage, string p_numeroLot, string p_nombreBoite, string p_dateConditionnement, string p_localisation, string p_elevation,
+            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto)
+        {
+            metier.AddCommandNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage, p_numeroLot, p_nombreBoite, p_dateConditionnement, p_localisation, p_elevation, p_mailFournisseur, p_seuilMin, p_quantiteCommandeAuto, p_commandeAuto);
+        }
         public void sendCommands()
         {
             metier.sendUpdateCommands();
+        }
+
+        public void closeConnection()
+        {
+            metier.closeConnection();
+        }
+
+        public void sendOrderMail(long p_ean)
+        {
+            metier.sendOrderMail(p_ean);
         }
     }
 }

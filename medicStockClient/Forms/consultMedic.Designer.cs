@@ -35,7 +35,7 @@
             this.listAddedMedic = new System.Windows.Forms.Panel();
             this.LBAddedMedic = new System.Windows.Forms.ListBox();
             this.BeginAddMedic = new System.Windows.Forms.Label();
-            this.Validate = new System.Windows.Forms.Button();
+            this.Validation = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dosageMedicList = new System.Windows.Forms.ComboBox();
@@ -138,17 +138,18 @@
             this.BeginAddMedic.TabIndex = 1;
             this.BeginAddMedic.Text = "Commencez à ajouter des médicaments pour configurer la liste";
             // 
-            // Validate
+            // Validation
             // 
-            this.Validate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Validate.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Validate.Location = new System.Drawing.Point(745, 396);
-            this.Validate.Margin = new System.Windows.Forms.Padding(2);
-            this.Validate.Name = "Validate";
-            this.Validate.Size = new System.Drawing.Size(115, 44);
-            this.Validate.TabIndex = 29;
-            this.Validate.Text = "VALIDER";
-            this.Validate.UseVisualStyleBackColor = false;
+            this.Validation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Validation.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Validation.Location = new System.Drawing.Point(745, 396);
+            this.Validation.Margin = new System.Windows.Forms.Padding(2);
+            this.Validation.Name = "Validation";
+            this.Validation.Size = new System.Drawing.Size(115, 44);
+            this.Validation.TabIndex = 29;
+            this.Validation.Text = "VALIDER";
+            this.Validation.UseVisualStyleBackColor = false;
+            this.Validation.Click += new System.EventHandler(this.Validate_Click);
             // 
             // Add
             // 
@@ -161,6 +162,7 @@
             this.Add.TabIndex = 28;
             this.Add.Text = "AJOUTER";
             this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // label5
             // 
@@ -201,6 +203,7 @@
             this.formeMedicList.Name = "formeMedicList";
             this.formeMedicList.Size = new System.Drawing.Size(299, 21);
             this.formeMedicList.TabIndex = 24;
+            this.formeMedicList.SelectedIndexChanged += new System.EventHandler(this.formeMedicList_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -266,6 +269,7 @@
             this.Disconnect.TabIndex = 16;
             this.Disconnect.TabStop = true;
             this.Disconnect.Text = "Deconnexion";
+            this.Disconnect.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Disconnect_LinkClicked);
             // 
             // headerPanel
             // 
@@ -273,7 +277,7 @@
             this.headerPanel.Controls.Add(this.noMedicError);
             this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Controls.Add(this.listAddedMedic);
-            this.headerPanel.Controls.Add(this.Validate);
+            this.headerPanel.Controls.Add(this.Validation);
             this.headerPanel.Controls.Add(this.Add);
             this.headerPanel.Controls.Add(this.label5);
             this.headerPanel.Controls.Add(this.dosageMedicList);
@@ -304,6 +308,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -348,6 +353,8 @@
             this.Controls.Add(this.headerPanel);
             this.Name = "consultMedic";
             this.Text = "consultMedic";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.consultMedic_FormClosing);
             this.listAddedMedic.ResumeLayout(false);
             this.listAddedMedic.PerformLayout();
             this.headerPanel.ResumeLayout(false);
@@ -368,7 +375,7 @@
         private System.Windows.Forms.Panel listAddedMedic;
         private System.Windows.Forms.ListBox LBAddedMedic;
         private System.Windows.Forms.Label BeginAddMedic;
-        public System.Windows.Forms.Button Validate;
+        public System.Windows.Forms.Button Validation;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox dosageMedicList;

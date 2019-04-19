@@ -52,53 +52,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authentification.cs">
+    <Compile Include="Forms\addUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authentification.Designer.cs">
+    <Compile Include="Forms\addUser.Designer.cs">
+      <DependentUpon>addUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authentification.Designer.cs">
       <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client.cs" />
-    <Compile Include="consultMedic.cs">
+    <Compile Include="Class\Client.cs" />
+    <Compile Include="Forms\consultMedic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="consultMedic.Designer.cs">
+    <Compile Include="Forms\consultMedic.Designer.cs">
       <DependentUpon>consultMedic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ihm.cs" />
-    <Compile Include="Interaction.cs" />
-    <Compile Include="lotMedicament.cs" />
-    <Compile Include="mainMenu.cs">
+    <Compile Include="Class\Ihm.cs" />
+    <Compile Include="Data Class\Interaction.cs" />
+    <Compile Include="Data Class\lotMedicament.cs" />
+    <Compile Include="Forms\mainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mainMenu.Designer.cs">
+    <Compile Include="Forms\mainMenu.Designer.cs">
       <DependentUpon>mainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Medicament.cs" />
-    <Compile Include="Metier.cs" />
+    <Compile Include="Data Class\Medicament.cs" />
+    <Compile Include="Class\Metier.cs" />
+    <Compile Include="Forms\recapAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\recapAddUser.Designer.cs">
+      <DependentUpon>recapAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\recapConsult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\recapConsult.Designer.cs">
+      <DependentUpon>recapConsult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="recapRecup.cs">
+    <Compile Include="Forms\recapRecup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="recapRecup.Designer.cs">
+    <Compile Include="Forms\recapRecup.Designer.cs">
       <DependentUpon>recapRecup.cs</DependentUpon>
     </Compile>
-    <Compile Include="recupMedicament.cs">
+    <Compile Include="Forms\recupMedicament.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="recupMedicament.Designer.cs">
+    <Compile Include="Forms\recupMedicament.Designer.cs">
       <DependentUpon>recupMedicament.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilisateur.cs" />
-    <EmbeddedResource Include="Authentification.resx">
+    <Compile Include="Data Class\Utilisateur.cs" />
+    <EmbeddedResource Include="Forms\addUser.resx">
+      <DependentUpon>addUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="consultMedic.resx">
+    <EmbeddedResource Include="Forms\consultMedic.resx">
       <DependentUpon>consultMedic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mainMenu.resx">
+    <EmbeddedResource Include="Forms\mainMenu.resx">
       <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\recapAddUser.resx">
+      <DependentUpon>recapAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\recapConsult.resx">
+      <DependentUpon>recapConsult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,10 +137,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="recapRecup.resx">
+    <EmbeddedResource Include="Forms\recapRecup.resx">
       <DependentUpon>recapRecup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="recupMedicament.resx">
+    <EmbeddedResource Include="Forms\recupMedicament.resx">
       <DependentUpon>recupMedicament.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
