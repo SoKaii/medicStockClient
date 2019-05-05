@@ -105,5 +105,33 @@ namespace medicStockClient
                 this.Hide();
             }
         }
+
+        private void AddUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ihm.sendCommands();
+            ihm.closeConnection();
+            Application.Exit();
+        }
+
+        private void LoginTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (loginTB.TextLength >= 3)
+            {
+                if (loginTB.TextLength > 3)
+                {
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            else
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

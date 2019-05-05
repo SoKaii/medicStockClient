@@ -57,6 +57,7 @@
             // login
             // 
             this.login.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.login.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.login.Location = new System.Drawing.Point(208, 122);
             this.login.Margin = new System.Windows.Forms.Padding(2);
             this.login.Name = "login";
