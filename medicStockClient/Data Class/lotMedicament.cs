@@ -18,6 +18,7 @@ namespace medicStockClient
         int quantiteCommandeAuto;
         bool commandeAuto;
         long numeroEan;
+        String datePeremption;
 
         public lotMedicament()
         {
@@ -31,9 +32,10 @@ namespace medicStockClient
             quantiteCommandeAuto = 0;
             commandeAuto = false;
             numeroEan = 0;
+            datePeremption = null;
         }
 
-        public lotMedicament(String p_numeroLot, int p_nombreBoite, String p_dateConditionnement, String p_localisation, int p_elevation, String p_mailFournisseurPrioritaire, int p_seuilMin, int p_quantiteCommandeAuto, bool p_commandeAuto,long p_numeroEan)
+        public lotMedicament(String p_numeroLot, int p_nombreBoite, String p_dateConditionnement, String p_localisation, int p_elevation, String p_mailFournisseurPrioritaire, int p_seuilMin, int p_quantiteCommandeAuto, bool p_commandeAuto,long p_numeroEan,String p_datePeremption)
         {
             numeroLot = p_numeroLot;
             nombreBoite = p_nombreBoite;
@@ -45,6 +47,7 @@ namespace medicStockClient
             quantiteCommandeAuto = p_quantiteCommandeAuto;
             commandeAuto = p_commandeAuto;
             numeroEan = p_numeroEan;
+            datePeremption = p_datePeremption;
         }
         public String getNumeroLot()
         { return numeroLot; }
@@ -75,5 +78,8 @@ namespace medicStockClient
 
         public long getNumeroEan()
         { return numeroEan; }
+
+        public String getDatePeremption()
+        { return datePeremption; }
     }
 }

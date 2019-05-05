@@ -1,6 +1,6 @@
 ﻿namespace medicStockClient
 {
-    partial class addUser
+    partial class addMedicament
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addUser));
-            this.listLimitTB = new System.Windows.Forms.Label();
-            this.Validation = new System.Windows.Forms.Button();
-            this.headerPanel = new System.Windows.Forms.Panel();
-            this.noUserError = new System.Windows.Forms.Label();
-            this.noAdmin = new System.Windows.Forms.RadioButton();
-            this.yesAdmin = new System.Windows.Forms.RadioButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addMedicament));
+            this.noMedicError = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.passwordTB = new System.Windows.Forms.TextBox();
-            this.prenomTB = new System.Windows.Forms.TextBox();
+            this.substanceTB = new System.Windows.Forms.TextBox();
+            this.dosageTB = new System.Windows.Forms.TextBox();
+            this.formeTB = new System.Windows.Forms.TextBox();
             this.nomTB = new System.Windows.Forms.TextBox();
-            this.loginTB = new System.Windows.Forms.TextBox();
+            this.listLimitTB = new System.Windows.Forms.Label();
             this.notAllCompletedError = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listAddedMedic = new System.Windows.Forms.Panel();
             this.LBAddedUser = new System.Windows.Forms.ListBox();
             this.BeginAddUser = new System.Windows.Forms.Label();
+            this.Validation = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,13 +54,78 @@
             this.Disconnect = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.headerPanel.SuspendLayout();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.categorieTB = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.eanTB = new System.Windows.Forms.TextBox();
             this.listAddedMedic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.headerPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // noMedicError
+            // 
+            this.noMedicError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.noMedicError.AutoSize = true;
+            this.noMedicError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noMedicError.ForeColor = System.Drawing.Color.Red;
+            this.noMedicError.Location = new System.Drawing.Point(858, 841);
+            this.noMedicError.Name = "noMedicError";
+            this.noMedicError.Size = new System.Drawing.Size(374, 20);
+            this.noMedicError.TabIndex = 44;
+            this.noMedicError.Text = "Veuillez ajouter au moins 1 nouveau médicament";
+            this.noMedicError.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(672, 658);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 20);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Substance Active : ";
+            // 
+            // substanceTB
+            // 
+            this.substanceTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.substanceTB.Location = new System.Drawing.Point(862, 656);
+            this.substanceTB.Margin = new System.Windows.Forms.Padding(4);
+            this.substanceTB.Name = "substanceTB";
+            this.substanceTB.Size = new System.Drawing.Size(363, 22);
+            this.substanceTB.TabIndex = 40;
+            // 
+            // dosageTB
+            // 
+            this.dosageTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dosageTB.Location = new System.Drawing.Point(862, 500);
+            this.dosageTB.Margin = new System.Windows.Forms.Padding(4);
+            this.dosageTB.Name = "dosageTB";
+            this.dosageTB.Size = new System.Drawing.Size(363, 22);
+            this.dosageTB.TabIndex = 39;
+            // 
+            // formeTB
+            // 
+            this.formeTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.formeTB.Location = new System.Drawing.Point(862, 412);
+            this.formeTB.Margin = new System.Windows.Forms.Padding(4);
+            this.formeTB.Name = "formeTB";
+            this.formeTB.Size = new System.Drawing.Size(363, 22);
+            this.formeTB.TabIndex = 38;
+            // 
+            // nomTB
+            // 
+            this.nomTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nomTB.Location = new System.Drawing.Point(862, 326);
+            this.nomTB.Margin = new System.Windows.Forms.Padding(4);
+            this.nomTB.Name = "nomTB";
+            this.nomTB.Size = new System.Drawing.Size(363, 22);
+            this.nomTB.TabIndex = 37;
             // 
             // listLimitTB
             // 
@@ -71,146 +133,12 @@
             this.listLimitTB.AutoSize = true;
             this.listLimitTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listLimitTB.ForeColor = System.Drawing.Color.Red;
-            this.listLimitTB.Location = new System.Drawing.Point(824, 779);
+            this.listLimitTB.Location = new System.Drawing.Point(858, 821);
             this.listLimitTB.Name = "listLimitTB";
             this.listLimitTB.Size = new System.Drawing.Size(350, 20);
             this.listLimitTB.TabIndex = 36;
             this.listLimitTB.Text = "Vous avez atteint la limite d\'ajouts simultanés";
             this.listLimitTB.Visible = false;
-            // 
-            // Validation
-            // 
-            this.Validation.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Validation.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Validation.Location = new System.Drawing.Point(1088, 708);
-            this.Validation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Validation.Name = "Validation";
-            this.Validation.Size = new System.Drawing.Size(153, 54);
-            this.Validation.TabIndex = 29;
-            this.Validation.Text = "VALIDER";
-            this.Validation.UseVisualStyleBackColor = false;
-            this.Validation.Click += new System.EventHandler(this.Validate_Click);
-            // 
-            // headerPanel
-            // 
-            this.headerPanel.Controls.Add(this.noUserError);
-            this.headerPanel.Controls.Add(this.noAdmin);
-            this.headerPanel.Controls.Add(this.yesAdmin);
-            this.headerPanel.Controls.Add(this.label7);
-            this.headerPanel.Controls.Add(this.passwordTB);
-            this.headerPanel.Controls.Add(this.prenomTB);
-            this.headerPanel.Controls.Add(this.nomTB);
-            this.headerPanel.Controls.Add(this.loginTB);
-            this.headerPanel.Controls.Add(this.listLimitTB);
-            this.headerPanel.Controls.Add(this.notAllCompletedError);
-            this.headerPanel.Controls.Add(this.label6);
-            this.headerPanel.Controls.Add(this.label1);
-            this.headerPanel.Controls.Add(this.listAddedMedic);
-            this.headerPanel.Controls.Add(this.Validation);
-            this.headerPanel.Controls.Add(this.Add);
-            this.headerPanel.Controls.Add(this.label5);
-            this.headerPanel.Controls.Add(this.label4);
-            this.headerPanel.Controls.Add(this.label3);
-            this.headerPanel.Controls.Add(this.pictureBox2);
-            this.headerPanel.Controls.Add(this.pictureBox1);
-            this.headerPanel.Controls.Add(this.connectedAs);
-            this.headerPanel.Controls.Add(this.label2);
-            this.headerPanel.Controls.Add(this.Disconnect);
-            this.headerPanel.Controls.Add(this.pictureBox3);
-            this.headerPanel.Controls.Add(this.pictureBox4);
-            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.headerPanel.Location = new System.Drawing.Point(0, 0);
-            this.headerPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1924, 956);
-            this.headerPanel.TabIndex = 12;
-            // 
-            // noUserError
-            // 
-            this.noUserError.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.noUserError.AutoSize = true;
-            this.noUserError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noUserError.ForeColor = System.Drawing.Color.Red;
-            this.noUserError.Location = new System.Drawing.Point(828, 800);
-            this.noUserError.Name = "noUserError";
-            this.noUserError.Size = new System.Drawing.Size(342, 20);
-            this.noUserError.TabIndex = 44;
-            this.noUserError.Text = "Veuillez ajouter au moins 1 nouvel utilisateur";
-            this.noUserError.Visible = false;
-            // 
-            // noAdmin
-            // 
-            this.noAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.noAdmin.AutoSize = true;
-            this.noAdmin.Location = new System.Drawing.Point(1012, 545);
-            this.noAdmin.Margin = new System.Windows.Forms.Padding(4);
-            this.noAdmin.Name = "noAdmin";
-            this.noAdmin.Size = new System.Drawing.Size(60, 21);
-            this.noAdmin.TabIndex = 43;
-            this.noAdmin.TabStop = true;
-            this.noAdmin.Text = "NON";
-            this.noAdmin.UseVisualStyleBackColor = true;
-            // 
-            // yesAdmin
-            // 
-            this.yesAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.yesAdmin.AutoSize = true;
-            this.yesAdmin.Location = new System.Drawing.Point(907, 545);
-            this.yesAdmin.Margin = new System.Windows.Forms.Padding(4);
-            this.yesAdmin.Name = "yesAdmin";
-            this.yesAdmin.Size = new System.Drawing.Size(53, 21);
-            this.yesAdmin.TabIndex = 42;
-            this.yesAdmin.TabStop = true;
-            this.yesAdmin.Text = "OUI";
-            this.yesAdmin.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(667, 615);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 20);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Mot de passe : ";
-            // 
-            // passwordTB
-            // 
-            this.passwordTB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passwordTB.Location = new System.Drawing.Point(828, 614);
-            this.passwordTB.Margin = new System.Windows.Forms.Padding(4);
-            this.passwordTB.Name = "passwordTB";
-            this.passwordTB.Size = new System.Drawing.Size(363, 22);
-            this.passwordTB.TabIndex = 40;
-            // 
-            // prenomTB
-            // 
-            this.prenomTB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.prenomTB.Location = new System.Drawing.Point(828, 468);
-            this.prenomTB.Margin = new System.Windows.Forms.Padding(4);
-            this.prenomTB.Name = "prenomTB";
-            this.prenomTB.Size = new System.Drawing.Size(363, 22);
-            this.prenomTB.TabIndex = 39;
-            // 
-            // nomTB
-            // 
-            this.nomTB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nomTB.Location = new System.Drawing.Point(828, 370);
-            this.nomTB.Margin = new System.Windows.Forms.Padding(4);
-            this.nomTB.Name = "nomTB";
-            this.nomTB.Size = new System.Drawing.Size(363, 22);
-            this.nomTB.TabIndex = 38;
-            // 
-            // loginTB
-            // 
-            this.loginTB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginTB.Location = new System.Drawing.Point(828, 272);
-            this.loginTB.Margin = new System.Windows.Forms.Padding(4);
-            this.loginTB.Name = "loginTB";
-            this.loginTB.Size = new System.Drawing.Size(363, 22);
-            this.loginTB.TabIndex = 37;
             // 
             // notAllCompletedError
             // 
@@ -218,7 +146,7 @@
             this.notAllCompletedError.AutoSize = true;
             this.notAllCompletedError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notAllCompletedError.ForeColor = System.Drawing.Color.Red;
-            this.notAllCompletedError.Location = new System.Drawing.Point(876, 666);
+            this.notAllCompletedError.Location = new System.Drawing.Point(910, 708);
             this.notAllCompletedError.Name = "notAllCompletedError";
             this.notAllCompletedError.Size = new System.Drawing.Size(253, 20);
             this.notAllCompletedError.TabIndex = 34;
@@ -230,19 +158,19 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(659, 545);
+            this.label6.Location = new System.Drawing.Point(730, 588);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 20);
+            this.label6.Size = new System.Drawing.Size(96, 20);
             this.label6.TabIndex = 31;
-            this.label6.Text = "Administrateur : ";
+            this.label6.Text = "Catégorie : ";
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(859, 916);
+            this.label1.Location = new System.Drawing.Point(859, 1015);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 19;
@@ -258,7 +186,7 @@
             this.listAddedMedic.Location = new System.Drawing.Point(0, 162);
             this.listAddedMedic.Margin = new System.Windows.Forms.Padding(0);
             this.listAddedMedic.Name = "listAddedMedic";
-            this.listAddedMedic.Size = new System.Drawing.Size(641, 744);
+            this.listAddedMedic.Size = new System.Drawing.Size(641, 843);
             this.listAddedMedic.TabIndex = 30;
             // 
             // LBAddedUser
@@ -272,7 +200,7 @@
             this.LBAddedUser.Location = new System.Drawing.Point(7, 54);
             this.LBAddedUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LBAddedUser.Name = "LBAddedUser";
-            this.LBAddedUser.Size = new System.Drawing.Size(631, 404);
+            this.LBAddedUser.Size = new System.Drawing.Size(631, 479);
             this.LBAddedUser.TabIndex = 2;
             // 
             // BeginAddUser
@@ -286,11 +214,23 @@
             this.BeginAddUser.TabIndex = 1;
             this.BeginAddUser.Text = "Commencez à ajouter des médicaments pour configurer la liste";
             // 
+            // Validation
+            // 
+            this.Validation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Validation.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.Validation.Location = new System.Drawing.Point(1122, 750);
+            this.Validation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Validation.Name = "Validation";
+            this.Validation.Size = new System.Drawing.Size(153, 54);
+            this.Validation.TabIndex = 29;
+            this.Validation.Text = "VALIDER";
+            this.Validation.UseVisualStyleBackColor = false;
+            // 
             // Add
             // 
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Add.BackColor = System.Drawing.Color.OldLace;
-            this.Add.Location = new System.Drawing.Point(788, 708);
+            this.Add.Location = new System.Drawing.Point(822, 750);
             this.Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(153, 54);
@@ -304,36 +244,36 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(715, 469);
+            this.label5.Location = new System.Drawing.Point(681, 502);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(145, 20);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Prénom : ";
+            this.label5.Text = "Dosage (en mg) : ";
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(741, 372);
+            this.label4.Location = new System.Drawing.Point(674, 414);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(152, 20);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Nom : ";
+            this.label4.Text = "Forme Galénique : ";
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(733, 273);
+            this.label3.Location = new System.Drawing.Point(767, 328);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 23;
-            this.label3.Text = "Login : ";
+            this.label3.Text = "Nom : ";
             // 
             // pictureBox2
             // 
@@ -346,13 +286,12 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 906);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1005);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1924, 50);
@@ -404,7 +343,6 @@
             this.Disconnect.TabIndex = 16;
             this.Disconnect.TabStop = true;
             this.Disconnect.Text = "Deconnexion";
-            this.Disconnect.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Disconnect_LinkClicked);
             // 
             // pictureBox3
             // 
@@ -430,38 +368,108 @@
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
             // 
-            // addUser
+            // headerPanel
+            // 
+            this.headerPanel.Controls.Add(this.eanTB);
+            this.headerPanel.Controls.Add(this.label8);
+            this.headerPanel.Controls.Add(this.categorieTB);
+            this.headerPanel.Controls.Add(this.noMedicError);
+            this.headerPanel.Controls.Add(this.label7);
+            this.headerPanel.Controls.Add(this.substanceTB);
+            this.headerPanel.Controls.Add(this.dosageTB);
+            this.headerPanel.Controls.Add(this.formeTB);
+            this.headerPanel.Controls.Add(this.nomTB);
+            this.headerPanel.Controls.Add(this.listLimitTB);
+            this.headerPanel.Controls.Add(this.notAllCompletedError);
+            this.headerPanel.Controls.Add(this.label6);
+            this.headerPanel.Controls.Add(this.label1);
+            this.headerPanel.Controls.Add(this.listAddedMedic);
+            this.headerPanel.Controls.Add(this.Validation);
+            this.headerPanel.Controls.Add(this.Add);
+            this.headerPanel.Controls.Add(this.label5);
+            this.headerPanel.Controls.Add(this.label4);
+            this.headerPanel.Controls.Add(this.label3);
+            this.headerPanel.Controls.Add(this.pictureBox2);
+            this.headerPanel.Controls.Add(this.pictureBox1);
+            this.headerPanel.Controls.Add(this.connectedAs);
+            this.headerPanel.Controls.Add(this.label2);
+            this.headerPanel.Controls.Add(this.Disconnect);
+            this.headerPanel.Controls.Add(this.pictureBox3);
+            this.headerPanel.Controls.Add(this.pictureBox4);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(1924, 1055);
+            this.headerPanel.TabIndex = 13;
+            // 
+            // categorieTB
+            // 
+            this.categorieTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.categorieTB.Location = new System.Drawing.Point(862, 586);
+            this.categorieTB.Margin = new System.Windows.Forms.Padding(4);
+            this.categorieTB.Name = "categorieTB";
+            this.categorieTB.Size = new System.Drawing.Size(363, 22);
+            this.categorieTB.TabIndex = 45;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(704, 242);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(122, 20);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Numéro EAN : ";
+            // 
+            // eanTB
+            // 
+            this.eanTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.eanTB.Location = new System.Drawing.Point(862, 240);
+            this.eanTB.Margin = new System.Windows.Forms.Padding(4);
+            this.eanTB.Name = "eanTB";
+            this.eanTB.Size = new System.Drawing.Size(363, 22);
+            this.eanTB.TabIndex = 47;
+            // 
+            // addMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 956);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.headerPanel);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "addUser";
-            this.Text = "addUser";
+            this.Name = "addMedicament";
+            this.Text = "addMedicament";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.headerPanel.ResumeLayout(false);
-            this.headerPanel.PerformLayout();
             this.listAddedMedic.ResumeLayout(false);
             this.listAddedMedic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Label noMedicError;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox substanceTB;
+        private System.Windows.Forms.TextBox dosageTB;
+        private System.Windows.Forms.TextBox formeTB;
+        private System.Windows.Forms.TextBox nomTB;
         private System.Windows.Forms.Label listLimitTB;
-        public System.Windows.Forms.Button Validation;
-        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.Label notAllCompletedError;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel listAddedMedic;
         private System.Windows.Forms.ListBox LBAddedUser;
         private System.Windows.Forms.Label BeginAddUser;
+        public System.Windows.Forms.Button Validation;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -473,14 +481,9 @@
         private System.Windows.Forms.LinkLabel Disconnect;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label notAllCompletedError;
-        private System.Windows.Forms.RadioButton noAdmin;
-        private System.Windows.Forms.RadioButton yesAdmin;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox passwordTB;
-        private System.Windows.Forms.TextBox prenomTB;
-        private System.Windows.Forms.TextBox nomTB;
-        private System.Windows.Forms.TextBox loginTB;
-        private System.Windows.Forms.Label noUserError;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.TextBox categorieTB;
+        private System.Windows.Forms.TextBox eanTB;
+        private System.Windows.Forms.Label label8;
     }
 }

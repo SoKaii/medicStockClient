@@ -22,7 +22,7 @@ namespace medicStockClient
         private List<long> listChoicedMedicament = new List<long>(); // Liste de tous les médicaments choisis par l'utilisateur afin d'y effectuer une interaction
         
 
-        private String serverAddress = "localhost"; // Configuration de l'adresse IP du serveur 
+        private String serverAddress = "127.0.0.1"; // Configuration de l'adresse IP du serveur 
         private Int32 serverPort = 22; // Configuration du port pour le serveur
 
         public Metier()
@@ -86,10 +86,10 @@ namespace medicStockClient
                 listInteraction.Add(new Interaction(listInterAttributes[y],Int32.Parse(listInterAttributes[y+1]), listInterAttributes[y + 2], Int32.Parse(listInterAttributes[y + 3]), Int64.Parse(listInterAttributes[y + 4]), listInterAttributes[y + 5], Int32.Parse(listInterAttributes[y + 6])));
             }
 
-            for (int y = 0; y < cleanList(listLotMedicAttributes).Count; y = y + 10)
+            for (int y = 0; y < cleanList(listLotMedicAttributes).Count; y = y + 11)
             {
                 listLotMedicament.Add(new lotMedicament(listLotMedicAttributes[y], Int32.Parse(listLotMedicAttributes[y + 1]), listLotMedicAttributes[y + 2], listLotMedicAttributes[y + 3], Int32.Parse(listLotMedicAttributes[y + 4]),
-                    listLotMedicAttributes[y + 5], Int32.Parse(listLotMedicAttributes[y + 6]), Int32.Parse(listLotMedicAttributes[y + 7]), ToBoolean(listLotMedicAttributes[y + 8]), Int64.Parse(listLotMedicAttributes[y + 9])));
+                    listLotMedicAttributes[y + 5], Int32.Parse(listLotMedicAttributes[y + 6]), Int32.Parse(listLotMedicAttributes[y + 7]), ToBoolean(listLotMedicAttributes[y + 8]), Int64.Parse(listLotMedicAttributes[y + 9]),listLotMedicAttributes[y + 10]));
             }
 
             for (int y = 0; y < cleanList(listMedicAttributes).Count; y = y + 6)
@@ -183,6 +183,7 @@ namespace medicStockClient
             {
                 if (lotMedic.getNumeroEan() == p_numeroEan)
                     lotMedicToOrder = lotMedic;
+
                 foreach (Medicament medic in listMedicament)
                 {
                     if (lotMedicToOrder.getNumeroEan() == medic.getNumeroEan())
@@ -191,14 +192,14 @@ namespace medicStockClient
             }
 
             var fromAddress = new MailAddress("medicStockAginfos@gmail.com", "medicStock");
-            var toAddress = new MailAddress(lotMedicToOrder.getMailFournisseurPrioritaire(), medicToOrder.getNom());
+            var toAddress = new MailAddress("t.martin92500@hotmail.fr", medicToOrder.getNom());
             const string fromPassword = "aginfosaforp";
             string subject = "Commande de " + medicToOrder.getNom() + " pour l'Hopital Innovation Aforp";
             string body = "Ceci est un message automatique envoyé par l'application medicalStock \n\n" +
                 "Bonjour,\n" +
-                "Nous souhaiterons vous passer commande de " + lotMedicToOrder.getQuantiteCommandeAuto() + " " + medicToOrder.getNom() + " " + medicToOrder.getDosage() + " mg en " + medicToOrder.getFormeGalenique() + "\n"
-                + "Merci de nous livrer cette commande au plus tôt possible\n\n"
-                + "Application medicalStock \n Gestion de Stock de l'Hopital Innovation Aforp\n\n"
+                "Nous souhaiterons vous passer commande de " + lotMedicToOrder.getQuantiteCommandeAuto() + " " + medicToOrder.getNom() + " " + medicToOrder.getDosage() + " mg en " + medicToOrder.getFormeGalenique()
+                + "\n\nMerci de nous livrer cette commande au plus tôt possible\n\n"
+                + "\nApplication medicalStock \nGestion de Stock de l'Hopital Innovation Aforp\n\n"
                 + "Ce mail est automatique, veuillez ne pas y répondre";
 
             var smtp = new SmtpClient
@@ -276,6 +277,17 @@ namespace medicStockClient
             return medic;
         }
 
+        public Medicament getMedicament(long p_ean)
+        {
+            Medicament medic = new Medicament();
+            foreach (Medicament mdc in listMedicament)
+            {
+                if (mdc.getNumeroEan() == p_ean)
+                    medic = mdc;
+            }
+            return medic;
+        }
+
         public lotMedicament GetLotMedicament(long numeroEan)
         {
             List<lotMedicament> lm = new List<lotMedicament>();
@@ -317,13 +329,29 @@ namespace medicStockClient
 
         public void AddCommandNewUser(string p_login, string p_nom, string p_prenom, string p_admin, string p_password)
         {
+            listUtilisateur.Add(new Utilisateur(p_login, p_nom, p_prenom, bool.Parse(p_admin), p_password));
             TcpClient.AddCommandsNewUser(p_login, p_nom, p_prenom, p_admin, p_password);
         }
 
         public void AddCommandNewMedic(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage, string p_numeroLot, string p_nombreBoite, string p_dateConditionnement, string p_localisation, string p_elevation,
-            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto)
+            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto, string p_datePeremption)
         {
-            TcpClient.AddCommandsNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage, p_numeroLot, p_nombreBoite, p_dateConditionnement, p_localisation, p_elevation, p_mailFournisseur, p_seuilMin, p_quantiteCommandeAuto, p_commandeAuto);
+            listMedicament.Add(new Medicament(Int64.Parse(p_ean), p_nom, p_categorie, p_substance, p_forme, Int32.Parse(p_dosage)));
+            listLotMedicament.Add(new lotMedicament(p_numeroLot, Int32.Parse(p_nombreBoite), p_dateConditionnement, p_localisation, Int32.Parse(p_elevation), p_mailFournisseur, Int32.Parse(p_seuilMin), Int32.Parse(p_quantiteCommandeAuto), bool.Parse(p_commandeAuto), Int64.Parse(p_ean), p_datePeremption));
+            TcpClient.AddCommandsNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage, p_numeroLot, p_nombreBoite, p_dateConditionnement, p_localisation, p_elevation, p_mailFournisseur, p_seuilMin, p_quantiteCommandeAuto, p_commandeAuto,p_datePeremption);
+        }
+
+        public List<lotMedicament> verifPeremption()
+        {
+            List<lotMedicament> lotsPerimes = new List<lotMedicament>();
+
+            foreach(lotMedicament lm in listLotMedicament)
+            {
+                if (DateTime.Compare(Convert.ToDateTime(lm.getDatePeremption()), DateTime.Now) < 0)
+                        lotsPerimes.Add(lm);
+            }
+
+            return lotsPerimes;
         }
 
         public void sendUpdateCommands()

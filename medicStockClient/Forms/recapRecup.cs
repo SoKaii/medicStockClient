@@ -38,6 +38,9 @@ namespace medicStockClient
 
             for (int i = 0; i < addedFullMedic.Count; i++)
             {
+                if (ihm.getActualStock(addedFullMedic[i].getNumeroEan()) < ihm.getLotMedic(addedFullMedic[i].getNumeroEan()).getSeuilMin() && ihm.getLotMedic(addedFullMedic[i].getNumeroEan()).getCommandeAuto() == true)
+                    ihm.sendOrderMail(addedFullMedic[i].getNumeroEan());
+
                 listLB[i].Visible = true;
                 listLB[i].Items.Add(addedFullMedic[i].getNom());
                 listLB[i].Items.Add(addedFullMedic[i].getDosage() + "mg");

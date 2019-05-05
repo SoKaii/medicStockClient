@@ -74,11 +74,11 @@ namespace medicStockClient
 
                 BeginAddUser.Visible = false;
                 addedUserToLB.Add(loginTB.Text.ToUpper() + " : " + prenomTB.Text + " " + nomTB.Text.ToUpper());
-                addedUserStringList.Add(loginTB.ToString());
-                addedUserStringList.Add(prenomTB.ToString());
-                addedUserStringList.Add(nomTB.ToString());
+                addedUserStringList.Add(loginTB.Text.ToString());
+                addedUserStringList.Add(prenomTB.Text.ToString());
+                addedUserStringList.Add(nomTB.Text.ToString());
                 addedUserStringList.Add(isAdmin);
-                addedUserStringList.Add(passwordTB.ToString());
+                addedUserStringList.Add(passwordTB.Text.ToString());
                 LBAddedUser.Items.Add(addedUserToLB[i]);
                 loginTB.ResetText();
                 nomTB.ResetText();

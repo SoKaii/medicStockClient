@@ -62,6 +62,18 @@ namespace medicStockClient
             Application.Exit();
         }
 
-       
+        private void ButtonAddMedic_Click(object sender, EventArgs e)
+        {
+            addMedicament addMedic = new addMedicament(ihm, userConnected);
+            addMedic.Show();
+            this.Hide();
+        }
+
+        /* private void VerifPeremptionBt_Click(object sender, EventArgs e)
+        {
+            verifPeremption verifPeremption = new verifPeremption(ihm, userConnected);
+            verifPeremption.Show();
+            this.Hide();
+        } */
     }
 }

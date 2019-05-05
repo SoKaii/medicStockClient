@@ -20,6 +20,7 @@ namespace medicStockClient
         private StreamReader reader;
         private StreamWriter writer;
         private String strToSent;
+        bool updated = false;
         private List<String> listUpdateCommands = new List<String>(); // Liste de toutes les commandes SQL générées durant l'utilisation de l'application 
 
 
@@ -50,34 +51,36 @@ namespace medicStockClient
 
         public void AddCommandsNewUser(string p_login, string p_nom, string p_prenom, string p_admin, string p_password)
         {
-            listUpdateCommands.Add("INSERT INTO utilisateur VALUES ('" + p_login + "','" + p_nom + "','" + p_prenom + "','" + p_admin + "',MD5('" + p_password + "');");
+            listUpdateCommands.Add("INSERT INTO user VALUES ('" + p_login + "','" + p_nom + "','" + p_prenom + "','" + p_admin + "',MD5('" + p_password + "'));");
         }
 
         public void AddCommandsNewMedic(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage, string p_numeroLot, string p_nombreBoite, string p_dateConditionnement, string p_localisation, string p_elevation,
-            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto)
+            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto, string p_datePeremption)
         {
             listUpdateCommands.Add("INSERT INTO medicament VALUES ('" + p_ean + "','" + p_nom + "','" + p_categorie + "','" + p_substance + "','" + p_forme + "','" + p_dosage + "');");
-            listUpdateCommands.Add("INSERT INTO lotmedic VALUES ('" + p_numeroLot + "','" + p_nombreBoite + "','" + p_dateConditionnement + "','" + p_localisation + "','" + p_elevation + "','" + p_mailFournisseur + "','" + p_seuilMin + "','" + p_quantiteCommandeAuto + "','" + p_commandeAuto + "','" + p_ean + "');");
+            listUpdateCommands.Add("INSERT INTO lotmedic VALUES ('" + p_numeroLot + "','" + p_nombreBoite + "','" + p_dateConditionnement + "','" + p_localisation + "','" + p_elevation + "','" + p_mailFournisseur + "','" + p_seuilMin + "','" + p_quantiteCommandeAuto + "','" + p_commandeAuto + "','" + p_ean + "','" + p_datePeremption + "');");
         }
 
         public void sendData()
         {
             try
             {
-                if (listUpdateCommands.Count > 0)
+                if (listUpdateCommands.Count > 0 && updated == false)
                 {
+                    listUpdateCommands[listUpdateCommands.Count -1].Trim(';');
+
                     foreach (string str in listUpdateCommands)
                     {
                         strToSent = strToSent + str;
                     }
                     writer.WriteLine(strToSent);
+                    updated = true;
                 }
             }
             catch (Exception e)
             {
                 throw new InvalidCastException(e.Message);
             }
-
         }
         public string getDataString()
         {
