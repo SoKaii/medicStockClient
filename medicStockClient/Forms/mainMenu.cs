@@ -59,7 +59,7 @@ namespace medicStockClient
         {
             ihm.sendCommands();
             ihm.closeConnection();
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void ButtonAddMedic_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace medicStockClient
         {
             ihm = p_ihm;
             userConnected = p_userConnected;
+            
             InitializeComponent();
             connectedAs.Text = userConnected.getPrenom() + " " + userConnected.getNom().ToUpper();
             foreach(String str in ihm.configChoiceMedic())
@@ -170,9 +171,7 @@ namespace medicStockClient
         {
             ihm.sendCommands();
             ihm.closeConnection();
-            Application.Exit();
+            Environment.Exit(0);
         }
-
-      
     }
 }

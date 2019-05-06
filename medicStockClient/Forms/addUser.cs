@@ -110,7 +110,7 @@ namespace medicStockClient
         {
             ihm.sendCommands();
             ihm.closeConnection();
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void LoginTB_KeyPress(object sender, KeyPressEventArgs e)
@@ -131,6 +131,22 @@ namespace medicStockClient
                 {
                     e.Handled = true;
                 }
+            }
+        }
+
+        private void NomTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PrenomTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

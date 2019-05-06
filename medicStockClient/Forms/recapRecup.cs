@@ -70,7 +70,8 @@ namespace medicStockClient
         private void recapRecup_FormClosing(object sender, FormClosingEventArgs e)
         {
             ihm.sendCommands();
-            Application.Exit();
+            ihm.closeConnection();
+            Environment.Exit(0);
         }
     }
 }

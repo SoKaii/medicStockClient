@@ -70,10 +70,9 @@ namespace medicStockClient
         {
             metier.AddCommandNewUser(p_login, p_nom, p_prenom, p_admin, p_password);
         }
-        public void addCommandNewMedicament(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage, string p_numeroLot, string p_nombreBoite, string p_dateConditionnement, string p_localisation, string p_elevation,
-            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto,string p_datePeremption)
+        public void addCommandNewMedicament(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage)
         {
-            metier.AddCommandNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage, p_numeroLot, p_nombreBoite, p_dateConditionnement, p_localisation, p_elevation, p_mailFournisseur, p_seuilMin, p_quantiteCommandeAuto, p_commandeAuto,p_datePeremption);
+            metier.AddCommandNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage);
         }
         public void sendCommands()
         {

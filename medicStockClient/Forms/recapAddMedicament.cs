@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace medicStockClient
 {
-    public partial class recapAddUser : Form
+    public partial class recapAddMedicament : Form
     {
         Ihm ihm;
         Utilisateur userConnected;
-        public recapAddUser(Ihm p_ihm, Utilisateur p_userConnected,List<String> p_listUserAdded)
+        public recapAddMedicament(Ihm p_ihm, Utilisateur p_userConnected, List<String> p_listMedicAdded)
         {
             ihm = p_ihm;
             userConnected = p_userConnected;
             InitializeComponent();
             connectedAs.Text = userConnected.getPrenom() + " " + userConnected.getNom().ToUpper();
 
-            recapAddedUser.Items.Add("Les utilisateurs suivants ont été ajoutés :");
-            foreach (String str in p_listUserAdded)
+            recapAddedMedicament.Items.Add("Les médicaments suivants ont été ajoutés :");
+            foreach (String str in p_listMedicAdded)
             {
-                recapAddedUser.Items.Add(str);
+                recapAddedMedicament.Items.Add(str);
             }
-           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace medicStockClient
             this.Hide();
         }
 
-        private void recapAddUser_FormClosing(object sender, FormClosingEventArgs e)
+        private void RecapAddMedicament_FormClosing(object sender, FormClosingEventArgs e)
         {
             ihm.sendCommands();
             ihm.closeConnection();

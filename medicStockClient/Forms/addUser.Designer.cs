@@ -189,6 +189,7 @@
             this.prenomTB.Name = "prenomTB";
             this.prenomTB.Size = new System.Drawing.Size(273, 20);
             this.prenomTB.TabIndex = 39;
+            this.prenomTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrenomTB_KeyPress);
             // 
             // nomTB
             // 
@@ -197,6 +198,7 @@
             this.nomTB.Name = "nomTB";
             this.nomTB.Size = new System.Drawing.Size(273, 20);
             this.nomTB.TabIndex = 38;
+            this.nomTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NomTB_KeyPress);
             // 
             // loginTB
             // 

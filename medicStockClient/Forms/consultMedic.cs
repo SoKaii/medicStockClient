@@ -119,7 +119,7 @@ namespace medicStockClient
         {
             ihm.sendCommands();
             ihm.closeConnection();
-            Application.Exit();
+            Environment.Exit(0);
         }
     }
 }

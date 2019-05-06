@@ -137,7 +137,7 @@ namespace medicStockClient
                     if (medic.getNom() == str)
                         alreadyPresent = false;
                 }
-                if (alreadyPresent == true)
+                if (alreadyPresent == true && getActualStock(medic.getNumeroEan()) > 0)
                     listMedicName.Add(medic.getNom());
             }
             return listMedicName;
@@ -329,16 +329,14 @@ namespace medicStockClient
 
         public void AddCommandNewUser(string p_login, string p_nom, string p_prenom, string p_admin, string p_password)
         {
-            listUtilisateur.Add(new Utilisateur(p_login, p_nom, p_prenom, bool.Parse(p_admin), p_password));
+            listUtilisateur.Add(new Utilisateur(p_login, p_nom, p_prenom, ToBoolean(p_admin), p_password));
             TcpClient.AddCommandsNewUser(p_login, p_nom, p_prenom, p_admin, p_password);
         }
 
-        public void AddCommandNewMedic(string p_ean, string p_nom, string p_categorie, string p_substance, string p_forme, string p_dosage, string p_numeroLot, string p_nombreBoite, string p_dateConditionnement, string p_localisation, string p_elevation,
-            string p_mailFournisseur, string p_seuilMin, string p_quantiteCommandeAuto, string p_commandeAuto, string p_datePeremption)
+        public void AddCommandNewMedic(string p_ean, string p_nom, string p_forme, string p_dosage, string p_categorie, string p_substance)
         {
             listMedicament.Add(new Medicament(Int64.Parse(p_ean), p_nom, p_categorie, p_substance, p_forme, Int32.Parse(p_dosage)));
-            listLotMedicament.Add(new lotMedicament(p_numeroLot, Int32.Parse(p_nombreBoite), p_dateConditionnement, p_localisation, Int32.Parse(p_elevation), p_mailFournisseur, Int32.Parse(p_seuilMin), Int32.Parse(p_quantiteCommandeAuto), bool.Parse(p_commandeAuto), Int64.Parse(p_ean), p_datePeremption));
-            TcpClient.AddCommandsNewMedic(p_ean, p_nom, p_categorie, p_substance, p_forme, p_dosage, p_numeroLot, p_nombreBoite, p_dateConditionnement, p_localisation, p_elevation, p_mailFournisseur, p_seuilMin, p_quantiteCommandeAuto, p_commandeAuto,p_datePeremption);
+            TcpClient.AddCommandsNewMedic(p_ean, p_nom, p_forme, p_dosage, p_categorie, p_substance);
         }
 
         public List<lotMedicament> verifPeremption()

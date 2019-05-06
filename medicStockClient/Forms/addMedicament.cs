@@ -68,6 +68,21 @@ namespace medicStockClient
                 i++;
             }
         }
+        private void Validate_Click(object sender, EventArgs e)
+        {
+            if (addedMedicStringList.Count == 0)
+                noMedicError.Visible = true;
+            else
+            {
+                for (int i = 0; i < addedMedicStringList.Count / 6; i = i + 6)
+                {
+                    ihm.addCommandNewMedicament(addedMedicStringList[i], addedMedicStringList[i + 1], addedMedicStringList[i + 2], addedMedicStringList[i + 3], addedMedicStringList[i + 4], addedMedicStringList[i+5]);
+                }
+                recapAddMedicament recap = new recapAddMedicament(ihm, userConnected, addedMedicToLB);
+                recap.Show();
+                this.Hide();
+            }
+        }
 
         private void Disconnect_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -88,7 +103,7 @@ namespace medicStockClient
         {
             ihm.sendCommands();
             ihm.closeConnection();
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void EanTB_KeyPress(object sender, KeyPressEventArgs e)

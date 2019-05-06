@@ -44,8 +44,8 @@ namespace medicStockClient
         private void verifPeremption_FormClosing(object sender, FormClosingEventArgs e)
         {
             ihm.sendCommands();
-            Application.Exit();
+            ihm.closeConnection();
+            Environment.Exit(0);
         }
-
     }
 }

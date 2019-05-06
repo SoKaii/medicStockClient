@@ -200,7 +200,7 @@
             this.LBAddedUser.FormattingEnabled = true;
             this.LBAddedUser.ItemHeight = 20;
             this.LBAddedUser.Location = new System.Drawing.Point(5, 44);
-            this.LBAddedUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LBAddedUser.Margin = new System.Windows.Forms.Padding(2);
             this.LBAddedUser.Name = "LBAddedUser";
             this.LBAddedUser.Size = new System.Drawing.Size(474, 364);
             this.LBAddedUser.TabIndex = 2;
@@ -222,19 +222,20 @@
             this.Validation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Validation.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.Validation.Location = new System.Drawing.Point(842, 609);
-            this.Validation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Validation.Margin = new System.Windows.Forms.Padding(2);
             this.Validation.Name = "Validation";
             this.Validation.Size = new System.Drawing.Size(115, 44);
             this.Validation.TabIndex = 8;
             this.Validation.Text = "VALIDER";
             this.Validation.UseVisualStyleBackColor = false;
+            this.Validation.Click += new System.EventHandler(this.Validate_Click);
             // 
             // Add
             // 
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Add.BackColor = System.Drawing.Color.OldLace;
             this.Add.Location = new System.Drawing.Point(616, 609);
-            this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(115, 44);
             this.Add.TabIndex = 7;
@@ -437,7 +438,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1443, 857);
             this.Controls.Add(this.headerPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "addMedicament";
             this.Text = "addMedicament";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

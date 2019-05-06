@@ -46,7 +46,7 @@ namespace medicStockClient
         private void Authentification_FormClosing(object sender, FormClosingEventArgs e)
         {
             ihm.closeConnection();
-            Application.Exit();
+            Environment.Exit(0);
         }
     }
 }
