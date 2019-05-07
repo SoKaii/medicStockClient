@@ -128,16 +128,16 @@ namespace medicStockClient
         public List<String> configureChoiceMedic()
         {
             List<String> listMedicName = new List<String>();
-            bool alreadyPresent = true;
+            bool alreadyPresent = false;
 
             foreach (Medicament medic in listMedicament)
             {
                 foreach (String str in listMedicName)
                 {
                     if (medic.getNom() == str)
-                        alreadyPresent = false;
+                        alreadyPresent = true;
                 }
-                if (alreadyPresent == true && getActualStock(medic.getNumeroEan()) > 0)
+                if (alreadyPresent == false && getActualStock(medic.getNumeroEan()) > 0)
                     listMedicName.Add(medic.getNom());
             }
             return listMedicName;

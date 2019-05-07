@@ -47,7 +47,7 @@
             // 
             this.loginLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(206, 106);
+            this.loginLabel.Location = new System.Drawing.Point(785, 289);
             this.loginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(90, 13);
@@ -58,7 +58,7 @@
             // 
             this.login.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.login.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.login.Location = new System.Drawing.Point(208, 122);
+            this.login.Location = new System.Drawing.Point(787, 305);
             this.login.Margin = new System.Windows.Forms.Padding(2);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(169, 20);
@@ -68,7 +68,7 @@
             // 
             this.passwordLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(208, 162);
+            this.passwordLabel.Location = new System.Drawing.Point(787, 345);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(78, 13);
@@ -78,7 +78,7 @@
             // password
             // 
             this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.password.Location = new System.Drawing.Point(208, 179);
+            this.password.Location = new System.Drawing.Point(787, 362);
             this.password.Margin = new System.Windows.Forms.Padding(2);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
@@ -89,7 +89,7 @@
             // connect
             // 
             this.connect.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.connect.Location = new System.Drawing.Point(236, 244);
+            this.connect.Location = new System.Drawing.Point(815, 427);
             this.connect.Margin = new System.Windows.Forms.Padding(2);
             this.connect.Name = "connect";
             this.connect.Size = new System.Drawing.Size(117, 36);
@@ -104,7 +104,7 @@
             this.invalidAuth.AutoSize = true;
             this.invalidAuth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invalidAuth.ForeColor = System.Drawing.Color.Red;
-            this.invalidAuth.Location = new System.Drawing.Point(206, 218);
+            this.invalidAuth.Location = new System.Drawing.Point(785, 401);
             this.invalidAuth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.invalidAuth.Name = "invalidAuth";
             this.invalidAuth.Size = new System.Drawing.Size(205, 15);
@@ -116,7 +116,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::medicStockClient.Properties.Resources.medicStock;
-            this.pictureBox1.Location = new System.Drawing.Point(444, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(1602, 30);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(119, 119);
@@ -130,7 +130,7 @@
             this.errorRecup.AutoSize = true;
             this.errorRecup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorRecup.ForeColor = System.Drawing.Color.Red;
-            this.errorRecup.Location = new System.Drawing.Point(181, 218);
+            this.errorRecup.Location = new System.Drawing.Point(760, 401);
             this.errorRecup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorRecup.Name = "errorRecup";
             this.errorRecup.Size = new System.Drawing.Size(230, 15);
@@ -143,7 +143,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(224, 332);
+            this.label1.Location = new System.Drawing.Point(803, 698);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 13);
@@ -154,10 +154,11 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.LightGray;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 309);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 675);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(600, 57);
+            this.pictureBox2.Size = new System.Drawing.Size(1758, 57);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
@@ -167,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(1758, 732);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.errorRecup);

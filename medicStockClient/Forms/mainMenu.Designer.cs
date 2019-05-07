@@ -36,16 +36,16 @@
             this.connectedLabel = new System.Windows.Forms.Label();
             this.connectedAs = new System.Windows.Forms.Label();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.verifPeremptionBt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.verifPeremptionBt = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.Disconnect = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.header = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.contentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.header)).BeginInit();
@@ -54,8 +54,8 @@
             // buttonRecupMedic
             // 
             this.buttonRecupMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonRecupMedic.Location = new System.Drawing.Point(619, 182);
-            this.buttonRecupMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRecupMedic.Location = new System.Drawing.Point(627, 187);
+            this.buttonRecupMedic.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRecupMedic.Name = "buttonRecupMedic";
             this.buttonRecupMedic.Size = new System.Drawing.Size(206, 43);
             this.buttonRecupMedic.TabIndex = 0;
@@ -66,8 +66,8 @@
             // buttonConsultMedic
             // 
             this.buttonConsultMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonConsultMedic.Location = new System.Drawing.Point(619, 245);
-            this.buttonConsultMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonConsultMedic.Location = new System.Drawing.Point(627, 246);
+            this.buttonConsultMedic.Margin = new System.Windows.Forms.Padding(2);
             this.buttonConsultMedic.Name = "buttonConsultMedic";
             this.buttonConsultMedic.Size = new System.Drawing.Size(206, 43);
             this.buttonConsultMedic.TabIndex = 1;
@@ -78,8 +78,8 @@
             // buttonAddMedic
             // 
             this.buttonAddMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonAddMedic.Location = new System.Drawing.Point(482, 301);
-            this.buttonAddMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddMedic.Location = new System.Drawing.Point(490, 306);
+            this.buttonAddMedic.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddMedic.Name = "buttonAddMedic";
             this.buttonAddMedic.Size = new System.Drawing.Size(206, 43);
             this.buttonAddMedic.TabIndex = 2;
@@ -91,8 +91,8 @@
             // buttonAddUser
             // 
             this.buttonAddUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonAddUser.Location = new System.Drawing.Point(744, 301);
-            this.buttonAddUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddUser.Location = new System.Drawing.Point(752, 306);
+            this.buttonAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddUser.Name = "buttonAddUser";
             this.buttonAddUser.Size = new System.Drawing.Size(206, 43);
             this.buttonAddUser.TabIndex = 3;
@@ -133,25 +133,37 @@
             // contentPanel
             // 
             this.contentPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.contentPanel.Controls.Add(this.verifPeremptionBt);
             this.contentPanel.Controls.Add(this.label2);
+            this.contentPanel.Controls.Add(this.verifPeremptionBt);
             this.contentPanel.Controls.Add(this.buttonRecupMedic);
+            this.contentPanel.Controls.Add(this.pictureBox2);
             this.contentPanel.Controls.Add(this.buttonConsultMedic);
             this.contentPanel.Controls.Add(this.buttonAddMedic);
             this.contentPanel.Controls.Add(this.buttonAddUser);
-            this.contentPanel.Controls.Add(this.pictureBox1);
             this.contentPanel.Location = new System.Drawing.Point(-53, 137);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1911, 739);
+            this.contentPanel.Size = new System.Drawing.Size(1911, 717);
             this.contentPanel.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightGray;
+            this.label2.Location = new System.Drawing.Point(678, 681);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Copyright (C) 2018 AGINFOS";
             // 
             // verifPeremptionBt
             // 
             this.verifPeremptionBt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.verifPeremptionBt.BackColor = System.Drawing.Color.LightSalmon;
             this.verifPeremptionBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verifPeremptionBt.Location = new System.Drawing.Point(636, 18);
-            this.verifPeremptionBt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.verifPeremptionBt.Location = new System.Drawing.Point(644, 23);
+            this.verifPeremptionBt.Margin = new System.Windows.Forms.Padding(2);
             this.verifPeremptionBt.Name = "verifPeremptionBt";
             this.verifPeremptionBt.Size = new System.Drawing.Size(178, 58);
             this.verifPeremptionBt.TabIndex = 23;
@@ -159,30 +171,17 @@
             this.verifPeremptionBt.UseVisualStyleBackColor = false;
             this.verifPeremptionBt.Visible = false;
             // 
-            // label2
+            // pictureBox2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(616, 686);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Copyright (C) 2018 AGINFOS";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 658);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(2500, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 655);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1911, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // headerPanel
             // 
@@ -258,14 +257,14 @@
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.headerPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainMenu";
             this.Text = "mainMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainMenu_FormClosing);
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -289,8 +288,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox header;
         private System.Windows.Forms.LinkLabel Disconnect;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button verifPeremptionBt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

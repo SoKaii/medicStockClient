@@ -69,11 +69,16 @@ namespace medicStockClient
             this.Hide();
         }
 
-        /* private void VerifPeremptionBt_Click(object sender, EventArgs e)
+         private void VerifPeremptionBt_Click(object sender, EventArgs e)
         {
             verifPeremption verifPeremption = new verifPeremption(ihm, userConnected);
             verifPeremption.Show();
             this.Hide();
-        } */
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
