@@ -67,7 +67,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(667, 775);
+            this.label1.Location = new System.Drawing.Point(666, 908);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 13);
