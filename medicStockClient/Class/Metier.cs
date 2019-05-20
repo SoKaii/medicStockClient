@@ -22,8 +22,8 @@ namespace medicStockClient
         private List<long> listChoicedMedicament = new List<long>(); // Liste de tous les médicaments choisis par l'utilisateur afin d'y effectuer une interaction
         
 
-        private String serverAddress = "192.168.121.201"; // Configuration de l'adresse IP du serveur 
-        private Int32 serverPort = 6456; // Configuration du port pour le serveur
+        private String serverAddress = "127.0.0.1"; // Configuration de l'adresse IP du serveur 
+        private Int32 serverPort = 22; // Configuration du port pour le serveur
 
         public Metier()
         {
@@ -139,6 +139,8 @@ namespace medicStockClient
                 }
                 if (alreadyPresent == false && getActualStock(medic.getNumeroEan()) > 0)
                     listMedicName.Add(medic.getNom());
+
+                alreadyPresent = false;
             }
             return listMedicName;
         }

@@ -54,6 +54,7 @@
             // buttonRecupMedic
             // 
             this.buttonRecupMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRecupMedic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRecupMedic.Location = new System.Drawing.Point(627, 187);
             this.buttonRecupMedic.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRecupMedic.Name = "buttonRecupMedic";
@@ -66,6 +67,7 @@
             // buttonConsultMedic
             // 
             this.buttonConsultMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonConsultMedic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConsultMedic.Location = new System.Drawing.Point(627, 246);
             this.buttonConsultMedic.Margin = new System.Windows.Forms.Padding(2);
             this.buttonConsultMedic.Name = "buttonConsultMedic";
@@ -78,6 +80,7 @@
             // buttonAddMedic
             // 
             this.buttonAddMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAddMedic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddMedic.Location = new System.Drawing.Point(490, 306);
             this.buttonAddMedic.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddMedic.Name = "buttonAddMedic";
@@ -91,6 +94,7 @@
             // buttonAddUser
             // 
             this.buttonAddUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddUser.Location = new System.Drawing.Point(752, 306);
             this.buttonAddUser.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddUser.Name = "buttonAddUser";

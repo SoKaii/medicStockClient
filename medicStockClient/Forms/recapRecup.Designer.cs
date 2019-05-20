@@ -49,6 +49,7 @@
             this.listBox6 = new System.Windows.Forms.ListBox();
             this.backMenu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -100,7 +101,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.MistyRose;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(535, 29);
+            this.label2.Location = new System.Drawing.Point(535, 13);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 20);
@@ -128,7 +129,7 @@
             this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
             this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Disconnect.LinkColor = System.Drawing.Color.Red;
-            this.Disconnect.Location = new System.Drawing.Point(594, 74);
+            this.Disconnect.Location = new System.Drawing.Point(595, 43);
             this.Disconnect.Name = "Disconnect";
             this.Disconnect.Size = new System.Drawing.Size(102, 20);
             this.Disconnect.TabIndex = 24;
@@ -166,7 +167,7 @@
             this.connectedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectedAs.ForeColor = System.Drawing.Color.OliveDrab;
             this.connectedAs.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.connectedAs.Location = new System.Drawing.Point(727, 29);
+            this.connectedAs.Location = new System.Drawing.Point(727, 13);
             this.connectedAs.Margin = new System.Windows.Forms.Padding(2, 2, 8, 0);
             this.connectedAs.Name = "connectedAs";
             this.connectedAs.Size = new System.Drawing.Size(57, 20);
@@ -327,11 +328,24 @@
             this.panel1.Size = new System.Drawing.Size(1378, 555);
             this.panel1.TabIndex = 29;
             // 
+            // Title
+            // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.MistyRose;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(487, 88);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(373, 25);
+            this.Title.TabIndex = 42;
+            this.Title.Text = "Récapitulatif Récupération Médicament(s)";
+            // 
             // recapRecup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 716);
+            this.Controls.Add(this.Title);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -381,5 +395,6 @@
         private System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.Button backMenu;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label Title;
     }
 }

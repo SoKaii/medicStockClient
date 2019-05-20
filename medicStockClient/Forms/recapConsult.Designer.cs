@@ -49,6 +49,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Title = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -262,7 +263,7 @@
             this.connectedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectedAs.ForeColor = System.Drawing.Color.OliveDrab;
             this.connectedAs.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.connectedAs.Location = new System.Drawing.Point(714, 10);
+            this.connectedAs.Location = new System.Drawing.Point(714, 4);
             this.connectedAs.Margin = new System.Windows.Forms.Padding(2, 2, 8, 0);
             this.connectedAs.Name = "connectedAs";
             this.connectedAs.Size = new System.Drawing.Size(57, 20);
@@ -276,7 +277,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.MistyRose;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(522, 10);
+            this.label2.Location = new System.Drawing.Point(522, 4);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 20);
@@ -291,7 +292,7 @@
             this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
             this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Disconnect.LinkColor = System.Drawing.Color.Red;
-            this.Disconnect.Location = new System.Drawing.Point(581, 55);
+            this.Disconnect.Location = new System.Drawing.Point(578, 34);
             this.Disconnect.Name = "Disconnect";
             this.Disconnect.Size = new System.Drawing.Size(102, 20);
             this.Disconnect.TabIndex = 34;
@@ -358,11 +359,24 @@
             this.pictureBox4.TabIndex = 33;
             this.pictureBox4.TabStop = false;
             // 
+            // Title
+            // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.MistyRose;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(476, 74);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(367, 25);
+            this.Title.TabIndex = 42;
+            this.Title.Text = "Récapitulatif Consultation Médicament(s)";
+            // 
             // recapConsult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1365, 683);
+            this.Controls.Add(this.Title);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -411,5 +425,6 @@
         private System.Windows.Forms.LinkLabel Disconnect;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label Title;
     }
 }

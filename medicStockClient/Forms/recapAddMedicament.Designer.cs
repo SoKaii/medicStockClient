@@ -41,6 +41,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.connectedAs = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -141,7 +142,7 @@
             this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
             this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Disconnect.LinkColor = System.Drawing.Color.Red;
-            this.Disconnect.Location = new System.Drawing.Point(665, 55);
+            this.Disconnect.Location = new System.Drawing.Point(665, 42);
             this.Disconnect.Name = "Disconnect";
             this.Disconnect.Size = new System.Drawing.Size(102, 20);
             this.Disconnect.TabIndex = 45;
@@ -201,11 +202,24 @@
             this.connectedAs.Text = "label1";
             this.connectedAs.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // Title
+            // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.MistyRose;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(605, 90);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(303, 25);
+            this.Title.TabIndex = 52;
+            this.Title.Text = "Récapitulatif Ajout Médicament(s)";
+            // 
             // recapAddMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1531, 930);
+            this.Controls.Add(this.Title);
             this.Controls.Add(this.backMenu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -246,5 +260,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label connectedAs;
+        private System.Windows.Forms.Label Title;
     }
 }

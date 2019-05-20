@@ -173,5 +173,10 @@ namespace medicStockClient
             ihm.closeConnection();
             Environment.Exit(0);
         }
+
+        private void StockReached_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

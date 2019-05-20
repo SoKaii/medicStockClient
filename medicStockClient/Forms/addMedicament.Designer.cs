@@ -58,6 +58,7 @@
             this.eanTB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.categorieTB = new System.Windows.Forms.TextBox();
+            this.Title = new System.Windows.Forms.Label();
             this.listAddedMedic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -307,7 +308,7 @@
             this.connectedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectedAs.ForeColor = System.Drawing.Color.OliveDrab;
             this.connectedAs.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.connectedAs.Location = new System.Drawing.Point(777, 44);
+            this.connectedAs.Location = new System.Drawing.Point(772, 5);
             this.connectedAs.Margin = new System.Windows.Forms.Padding(2, 2, 8, 0);
             this.connectedAs.Name = "connectedAs";
             this.connectedAs.Size = new System.Drawing.Size(57, 20);
@@ -321,7 +322,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.MistyRose;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(590, 44);
+            this.label2.Location = new System.Drawing.Point(585, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 20);
@@ -336,7 +337,7 @@
             this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
             this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Disconnect.LinkColor = System.Drawing.Color.Red;
-            this.Disconnect.Location = new System.Drawing.Point(643, 85);
+            this.Disconnect.Location = new System.Drawing.Point(643, 34);
             this.Disconnect.Name = "Disconnect";
             this.Disconnect.Size = new System.Drawing.Size(102, 20);
             this.Disconnect.TabIndex = 16;
@@ -370,6 +371,7 @@
             // 
             // headerPanel
             // 
+            this.headerPanel.Controls.Add(this.Title);
             this.headerPanel.Controls.Add(this.eanTB);
             this.headerPanel.Controls.Add(this.label8);
             this.headerPanel.Controls.Add(this.categorieTB);
@@ -432,6 +434,18 @@
             this.categorieTB.TabIndex = 5;
             this.categorieTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CategorieTB_KeyPress);
             // 
+            // Title
+            // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.MistyRose;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(619, 81);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(193, 25);
+            this.Title.TabIndex = 47;
+            this.Title.Text = "Ajout Médicament(s)";
+            // 
             // addMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,5 +500,6 @@
         private System.Windows.Forms.TextBox categorieTB;
         private System.Windows.Forms.TextBox eanTB;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Title;
     }
 }

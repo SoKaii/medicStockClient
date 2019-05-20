@@ -58,6 +58,7 @@
             this.noMedicError = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Title = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -88,7 +89,7 @@
             this.Disconnect.BackColor = System.Drawing.Color.MistyRose;
             this.Disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Disconnect.LinkColor = System.Drawing.Color.Red;
-            this.Disconnect.Location = new System.Drawing.Point(851, 85);
+            this.Disconnect.Location = new System.Drawing.Point(850, 44);
             this.Disconnect.Name = "Disconnect";
             this.Disconnect.Size = new System.Drawing.Size(102, 20);
             this.Disconnect.TabIndex = 16;
@@ -102,7 +103,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.MistyRose;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(797, 44);
+            this.label2.Location = new System.Drawing.Point(787, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 20);
@@ -117,7 +118,7 @@
             this.connectedAs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectedAs.ForeColor = System.Drawing.Color.OliveDrab;
             this.connectedAs.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.connectedAs.Location = new System.Drawing.Point(985, 44);
+            this.connectedAs.Location = new System.Drawing.Point(983, 14);
             this.connectedAs.Margin = new System.Windows.Forms.Padding(2, 2, 8, 0);
             this.connectedAs.Name = "connectedAs";
             this.connectedAs.Size = new System.Drawing.Size(57, 20);
@@ -152,10 +153,13 @@
             // 
             this.nameMedicList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameMedicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nameMedicList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameMedicList.FormattingEnabled = true;
-            this.nameMedicList.Location = new System.Drawing.Point(764, 300);
+            this.nameMedicList.Location = new System.Drawing.Point(764, 298);
+            this.nameMedicList.MaxDropDownItems = 30;
             this.nameMedicList.Name = "nameMedicList";
-            this.nameMedicList.Size = new System.Drawing.Size(299, 21);
+            this.nameMedicList.Size = new System.Drawing.Size(299, 28);
+            this.nameMedicList.Sorted = true;
             this.nameMedicList.TabIndex = 22;
             this.nameMedicList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -174,10 +178,13 @@
             // 
             this.formeMedicList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.formeMedicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.formeMedicList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formeMedicList.FormattingEnabled = true;
-            this.formeMedicList.Location = new System.Drawing.Point(764, 379);
+            this.formeMedicList.Location = new System.Drawing.Point(763, 375);
+            this.formeMedicList.MaxDropDownItems = 17;
             this.formeMedicList.Name = "formeMedicList";
-            this.formeMedicList.Size = new System.Drawing.Size(299, 21);
+            this.formeMedicList.Size = new System.Drawing.Size(299, 28);
+            this.formeMedicList.Sorted = true;
             this.formeMedicList.TabIndex = 24;
             this.formeMedicList.SelectedIndexChanged += new System.EventHandler(this.formeMedicList_SelectedIndexChanged);
             // 
@@ -196,10 +203,13 @@
             // 
             this.dosageMedicList.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dosageMedicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dosageMedicList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dosageMedicList.FormattingEnabled = true;
-            this.dosageMedicList.Location = new System.Drawing.Point(764, 456);
+            this.dosageMedicList.Location = new System.Drawing.Point(763, 454);
+            this.dosageMedicList.MaxDropDownItems = 14;
             this.dosageMedicList.Name = "dosageMedicList";
-            this.dosageMedicList.Size = new System.Drawing.Size(299, 21);
+            this.dosageMedicList.Size = new System.Drawing.Size(299, 28);
+            this.dosageMedicList.Sorted = true;
             this.dosageMedicList.TabIndex = 26;
             this.dosageMedicList.SelectedIndexChanged += new System.EventHandler(this.dosageMedicList_SelectedIndexChanged);
             // 
@@ -219,7 +229,7 @@
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Add.BackColor = System.Drawing.Color.OldLace;
             this.Add.Location = new System.Drawing.Point(722, 573);
-            this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(115, 44);
             this.Add.TabIndex = 28;
@@ -232,7 +242,7 @@
             this.Validation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Validation.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.Validation.Location = new System.Drawing.Point(947, 573);
-            this.Validation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Validation.Margin = new System.Windows.Forms.Padding(2);
             this.Validation.Name = "Validation";
             this.Validation.Size = new System.Drawing.Size(115, 44);
             this.Validation.TabIndex = 29;
@@ -262,7 +272,7 @@
             this.LBAddedMedic.FormattingEnabled = true;
             this.LBAddedMedic.ItemHeight = 20;
             this.LBAddedMedic.Location = new System.Drawing.Point(5, 44);
-            this.LBAddedMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LBAddedMedic.Margin = new System.Windows.Forms.Padding(2);
             this.LBAddedMedic.Name = "LBAddedMedic";
             this.LBAddedMedic.Size = new System.Drawing.Size(408, 464);
             this.LBAddedMedic.TabIndex = 2;
@@ -293,6 +303,7 @@
             // 
             // headerPanel
             // 
+            this.headerPanel.Controls.Add(this.Title);
             this.headerPanel.Controls.Add(this.alreadyChoosed);
             this.headerPanel.Controls.Add(this.actualStock);
             this.headerPanel.Controls.Add(this.actualStockTitle);
@@ -371,13 +382,14 @@
             this.stockReached.AutoSize = true;
             this.stockReached.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockReached.ForeColor = System.Drawing.Color.Red;
-            this.stockReached.Location = new System.Drawing.Point(1006, 555);
+            this.stockReached.Location = new System.Drawing.Point(1079, 587);
             this.stockReached.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.stockReached.Name = "stockReached";
             this.stockReached.Size = new System.Drawing.Size(101, 17);
             this.stockReached.TabIndex = 37;
             this.stockReached.Text = "Stock dépassé";
             this.stockReached.Visible = false;
+            this.stockReached.Click += new System.EventHandler(this.StockReached_Click);
             // 
             // listLimitTB
             // 
@@ -397,7 +409,7 @@
             // 
             this.quantityMedic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.quantityMedic.Location = new System.Drawing.Point(764, 525);
-            this.quantityMedic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quantityMedic.Margin = new System.Windows.Forms.Padding(2);
             this.quantityMedic.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -413,12 +425,12 @@
             this.quantityError.AutoSize = true;
             this.quantityError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantityError.ForeColor = System.Drawing.Color.Red;
-            this.quantityError.Location = new System.Drawing.Point(809, 555);
+            this.quantityError.Location = new System.Drawing.Point(748, 554);
             this.quantityError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantityError.Name = "quantityError";
-            this.quantityError.Size = new System.Drawing.Size(182, 17);
+            this.quantityError.Size = new System.Drawing.Size(314, 17);
             this.quantityError.TabIndex = 34;
-            this.quantityError.Text = "Veuillez entrer une quantité";
+            this.quantityError.Text = "Veuillez ajouter au moins 1 médicament à la liste";
             this.quantityError.Visible = false;
             // 
             // noMedicError
@@ -456,6 +468,18 @@
             this.pictureBox4.Size = new System.Drawing.Size(1857, 132);
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
+            // 
+            // Title
+            // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.MistyRose;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Location = new System.Drawing.Point(797, 85);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(263, 25);
+            this.Title.TabIndex = 41;
+            this.Title.Text = "Récupération Médicament(s)";
             // 
             // recupMedicament
             // 
@@ -511,5 +535,6 @@
         private System.Windows.Forms.Label actualStockTitle;
         private System.Windows.Forms.Label stockReached;
         private System.Windows.Forms.Label alreadyChoosed;
+        private System.Windows.Forms.Label Title;
     }
 }
