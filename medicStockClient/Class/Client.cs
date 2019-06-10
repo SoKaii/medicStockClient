@@ -31,12 +31,12 @@ namespace medicStockClient
             port = p_port;
             try
             {
-                networkStream = ClientTcp.GetStream();
-                writer = new StreamWriter(networkStream);
-                reader = new StreamReader(networkStream);
+                networkStream = ClientTcp.GetStream(); //contection au serveur 
+                writer = new StreamWriter(networkStream); // ecriture sur le reseaux 
+                reader = new StreamReader(networkStream); // lecture sur le reseaux
 
                 writer.AutoFlush = true;
-                dataString = reader.ReadLine();
+                dataString = reader.ReadLine(); //recup ce que le serveur envoie 
             }
             catch (Exception e)
             {
